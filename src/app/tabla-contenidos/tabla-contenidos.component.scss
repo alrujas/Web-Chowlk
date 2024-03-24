@@ -1,0 +1,58 @@
+.tabla{
+    display:flex;
+    height: 100%;
+    width: 100%;
+    background-color: #f8f9fa;
+    flex-direction: column;
+    overflow-y: scroll;
+    .titulo{
+        display: flex;
+        justify-content: center;
+        font-family: sans-serif;
+        font-size: 1.85rem;
+        color: #6c757d;
+        padding-bottom: 0.5rem;
+        border-bottom: rgb(151, 151, 151) solid 1px;
+    }
+    .contenido{
+        padding-left: 1.25rem;
+        .principal{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            padding-bottom: 0.75rem;
+        }
+        .secundario{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding-left: 1rem;
+            font-size: 1.35rem;
+            padding-bottom: 0.75rem;
+        }
+        .terciario{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding-left: 2.25rem;
+            font-size: 1.2rem;
+            padding-bottom: 0.75rem;
+        }
+        .cuaternario{
+            display: flex;
+            flex-wrap: nowrap;
+            padding-left: 3.5rem;
+            font-size: 1.05rem;
+            padding-bottom: 0.75rem;
+        }
+    }
+}
+.link{
+    text-decoration: none;
+    color: #444;
+    font-family: sans-serif;
+}
+.ocultar{
+    width: 10%;
+}

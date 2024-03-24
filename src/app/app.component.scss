@@ -1,0 +1,18 @@
+.tutorial{
+    display: flex;
+    flex-direction: row;
+    .tabla-contenidos{
+        width: 25%;
+        height: 100%;
+        position: fixed;
+        top: 0; /* Fija la tabla en la parte superior de la pantalla */
+        left: 0; /* Fija la tabla en el lado izquierdo de la pantalla */
+    }
+    .contenido-tutorial{
+        width: 75%;
+        height: 100%;
+        position: fixed;
+        top: 0; /* Puedes ajustar este valor si quieres dejar un espacio desde la parte superior */
+        left: 25%; /* Establece la distancia desde el borde izquierdo de la pantalla, igual al ancho de la tabla-contenido */
+    }
+}
