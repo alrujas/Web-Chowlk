@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { OcultarTablaService } from '../services/ocultar-tabla.service';
 
 
 @Component({
@@ -8,5 +8,11 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './tabla-contenidos.component.scss'
 })
 export class TablaContenidosComponent {
+  @Input() dispositivo!:string;
 
+  constructor(public ocultarTablaService : OcultarTablaService){}
+
+  contraerTabla(){
+    this.ocultarTablaService.setValorOcultar(true);
+  }
 }

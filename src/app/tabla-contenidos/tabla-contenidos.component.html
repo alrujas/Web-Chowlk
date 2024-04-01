@@ -1,11 +1,11 @@
-<div class="tabla">
+<div class="tabla" [ngClass]="dispositivo">
+    <mat-icon *ngIf="(dispositivo == 'mobile')" class="contraer" (click)="contraerTabla()">close</mat-icon>
     <h4 class="titulo">Table of Contents</h4>
     <div class="contenido">
         <div class="principal">
             <a href="#getting-started" class="link">
             Tutorial: Your First Experience
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="secundario">
             <a href="#introduction" class="link">
@@ -16,13 +16,11 @@
             <a href="" class="link">
                 Classes
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="terciario">
             <a href="" class="link">
                 Class Description
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="cuaternario">
             <a href="" class="link">
@@ -43,7 +41,6 @@
             <a href="" class="link">
                 Class axioms
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="cuaternario">
             <a href="" class="link">
@@ -64,13 +61,11 @@
             <a href="" class="link">
                 Properties
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="terciario">
             <a href="" class="link">
                 RDF Schema constructs
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="cuaternario">
             <a href="" class="link">
@@ -91,7 +86,6 @@
             <a href="" class="link">
                 Relations to other properties
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="cuaternario">
             <a href="" class="link">
@@ -107,7 +101,6 @@
             <a href="" class="link">
                 Cardinality
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="cuaternario">
             <a href="" class="link">
@@ -123,7 +116,6 @@
             <a href="" class="link">
                 Logical Characteristics
             </a>
-            <mat-icon class="ocultar">expand_less</mat-icon>
         </div>
         <div class="cuaternario">
             <a href="" class="link">

@@ -5,46 +5,142 @@
     background-color: #f8f9fa;
     flex-direction: column;
     overflow-y: scroll;
-    .titulo{
-        display: flex;
-        justify-content: center;
-        font-family: sans-serif;
-        font-size: 1.85rem;
-        color: #6c757d;
-        padding-bottom: 0.5rem;
-        border-bottom: rgb(151, 151, 151) solid 1px;
+}
+.tabla{
+    &.computer{
+        .titulo{
+            display: flex;
+            justify-content: center;
+            font-family: sans-serif;
+            font-size: 1.85rem;
+            color: #6c757d;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            border-bottom: rgb(151, 151, 151) solid 1px;
+        }
+        .contenido{
+            padding-left: 1.25rem;
+            .principal{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                font-size: 1.5rem;
+                padding-bottom: 0.75rem;
+            }
+            .secundario{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                padding-left: 1rem;
+                font-size: 1.35rem;
+                padding-bottom: 0.75rem;
+            }
+            .terciario{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                padding-left: 2.25rem;
+                font-size: 1.2rem;
+                padding-bottom: 0.75rem;
+            }
+            .cuaternario{
+                display: flex;
+                flex-wrap: nowrap;
+                padding-left: 3.5rem;
+                font-size: 1.05rem;
+                padding-bottom: 0.75rem;
+            }
+        }
     }
-    .contenido{
-        padding-left: 1.25rem;
-        .principal{
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
+}
+.tabla{
+    &.mobile,
+    &.mobile_landscape{
+        .titulo{
+            font-family: sans-serif;
+            font-size: 1.15rem;
+            color: #6c757d;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            border-bottom: rgb(151, 151, 151) solid 1px;
+        }
+        .contenido{
+            padding-left: 0.5rem;
+            .principal{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                font-size: 1rem;
+                padding-bottom: 0.75rem;
+            }
+            .secundario{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                padding-left: 1rem;
+                font-size: 0.85rem;
+                padding-bottom: 0.75rem;
+            }
+            .terciario{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                padding-left: 1.5rem;
+                font-size: 0.7rem;
+                padding-bottom: 0.75rem;
+            }
+            .cuaternario{
+                display: flex;
+                flex-wrap: nowrap;
+                padding-left: 2rem;
+                font-size: 0.55rem;
+                padding-bottom: 0.75rem;
+            }
+        }
+    }
+}
+.tabla{
+    &.tablet, &.tablet_landscape{
+        .titulo{
+            font-family: sans-serif;
             font-size: 1.5rem;
-            padding-bottom: 0.75rem;
+            color: #6c757d;
+            padding-bottom: 0.5rem;
+            text-align: center;
+            border-bottom: rgb(151, 151, 151) solid 1px;
         }
-        .secundario{
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            padding-left: 1rem;
-            font-size: 1.35rem;
-            padding-bottom: 0.75rem;
-        }
-        .terciario{
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            padding-left: 2.25rem;
-            font-size: 1.2rem;
-            padding-bottom: 0.75rem;
-        }
-        .cuaternario{
-            display: flex;
-            flex-wrap: nowrap;
-            padding-left: 3.5rem;
-            font-size: 1.05rem;
-            padding-bottom: 0.75rem;
+        .contenido{
+            padding-left: 0.75rem;
+            .principal{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                font-size: 1.35rem;
+                padding-bottom: 0.75rem;
+            }
+            .secundario{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                padding-left: 1.25rem;
+                font-size: 1.2rem;
+                padding-bottom: 0.75rem;
+            }
+            .terciario{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                padding-left: 1.75rem;
+                font-size: 1.05rem;
+                padding-bottom: 0.75rem;
+            }
+            .cuaternario{
+                display: flex;
+                flex-wrap: nowrap;
+                padding-left: 2.25rem;
+                font-size: 0.9rem;
+                padding-bottom: 0.75rem;
+            }
         }
     }
 }
@@ -53,6 +149,6 @@
     color: #444;
     font-family: sans-serif;
 }
-.ocultar{
-    width: 10%;
+.contraer{
+    padding-left: 80%;
 }

@@ -1,4 +1,4 @@
-<div class="contenido">
+<div class="contenido" [ngClass]="dispositivo">
     <img src = "../../../assets/img/chowlk.png" alt="logo-chowlk" class = "logo-chowlk">
     <div class = "barra-navegacion">
         <p class = "no-seleccionado">Converter</p>
@@ -10,4 +10,5 @@
             <img src = "../../../assets/img/github.png" alt="logo-github" class = "logo-github">
         </a>
     </div>
+    <mat-icon *ngIf="extendido" class="menu" (click)="expandirTabla()">menu</mat-icon>
 </div>

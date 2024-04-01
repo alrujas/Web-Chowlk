@@ -1,18 +1,101 @@
 .tutorial{
     display: flex;
     flex-direction: row;
-    .tabla-contenidos{
-        width: 25%;
-        height: 100%;
-        position: fixed;
-        top: 0; /* Fija la tabla en la parte superior de la pantalla */
-        left: 0; /* Fija la tabla en el lado izquierdo de la pantalla */
+}
+.tutorial{
+    &.computer{
+        .tabla-contenidos{
+            width: 25%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .contenido-tutorial{
+            width: 75%;
+            height: 90%;
+            position: fixed;
+            top: 0;
+            left: 25%;
+        }
     }
-    .contenido-tutorial{
-        width: 75%;
-        height: 100%;
-        position: fixed;
-        top: 0; /* Puedes ajustar este valor si quieres dejar un espacio desde la parte superior */
-        left: 25%; /* Establece la distancia desde el borde izquierdo de la pantalla, igual al ancho de la tabla-contenido */
+}
+.tutorial{
+    &.mobile{
+        .tabla-contenidos{
+            width: 30%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .contenido-tutorial{
+            width: 70%;
+            height: 90%;
+            position: fixed;
+            top: 0;
+            left: 30%;
+        }
+        .contenido-tutorial-extendido{
+            width: 100%;
+            height: 87%;
+            position: fixed;
+            top:0;
+            left:0;
+        }
+    }
+}
+.tutorial{
+    &.mobile_landscape{
+        .tabla-contenidos{
+            width: 30%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .contenido-tutorial{
+            width: 70%;
+            height: 80%;
+            position: fixed;
+            top: 0;
+            left: 30%;
+        }
+    }
+}
+.tutorial{
+    &.tablet{
+        .tabla-contenidos{
+            width: 25%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .contenido-tutorial{
+            width: 75%;
+            height: 88%;
+            position: fixed;
+            top: 0;
+            left: 25%;
+        }
+    }
+}
+.tutorial{
+    &.tablet_landscape{
+        .tabla-contenidos{
+            width: 25%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .contenido-tutorial{
+            width: 75%;
+            height: 85%;
+            position: fixed;
+            top: 0;
+            left: 25%;
+        }
     }
 }

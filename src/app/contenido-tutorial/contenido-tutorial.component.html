@@ -1,5 +1,5 @@
-<app-header class="header"></app-header>
-<div class = "contenido">
+<app-header [dispositivo]="dispositivo" [extendido]="extendido"></app-header>
+<div class = "contenido" [ngClass]="dispositivo">
     <div class="info-pagina">
         <h1 class="titulo">Chowlk Tutorial</h1>
         <p class="resumen">Interactive tutorials and video tutorials on using Chowlk to convert diagrams.net 
@@ -43,7 +43,7 @@
                 <a class="link" href="../../assets/files/chowlk-library-complete.xml" download="chowlk-library-complete"> Download</a>
             </div>
     </div>
-    <section id="getting-started" class="apartado" style="padding-top: 2rem;">
+    <div id="getting-started" class="apartado" style="padding-top: 2rem;">
         <p class="encabezado">
             <b>Getting Started with Chowlk: Your First Experience</b>
         </p>
@@ -53,13 +53,13 @@
             creating OWL implementations from your diagrams.net ontology conceptualizations. Feel free to explore
             as many or as few lessons as you prefer, and tackle them in any order that suits your learning style
         </p>
-    </section>
-    <section id="introduction" class="apartado">
+    </div>
+    <div id="introduction" class="apartado">
         <p class="encabezado">
             <b>Introduction</b>
         </p>
         <p class="texto">
             Content of Introduction
         </p>
-    </section>
+    </div>
 </div>
