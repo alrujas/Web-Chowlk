@@ -1,8 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { DiagramEditorService } from '../services/diagram-editor.service';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
-// const mxAux = require('mxgraph');
-// const { mxGraph, mxGraphModel, mxHierarchicalLayout } = mxAux;
 
 @Component({
   selector: 'app-contenido-tutorial',
@@ -12,13 +9,11 @@ import { DiagramEditorService } from '../services/diagram-editor.service';
 export class ContenidoTutorialComponent{
   @Input() dispositivo!:string;
   @Input() extendido!:boolean;
+  @Input() apartado!:string;
+  @Output() apartadoChange = new EventEmitter<string>()
 
-  @ViewChild('diagrama', { static: true }) diagramaRef: ElementRef;
-
-  constructor(private diagram : DiagramEditorService){}
-
-  editarDiagrama(){
-    const diagramaElemento: HTMLImageElement | HTMLObjectElement = this.diagramaRef.nativeElement;
-    this.diagram.editElement(diagramaElemento);
+  onDifficultySelected(difficulty: string) {
+    this.apartado = difficulty;
+    this.apartadoChange.emit(this.apartado);
   }
 }

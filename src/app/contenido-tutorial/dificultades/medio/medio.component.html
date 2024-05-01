@@ -1,0 +1,220 @@
+<div class="apartado" [ngClass]="dispositivo">
+    <div id="specification">
+        <p class="encabezado">
+            <b>Specification</b>
+        </p>
+        <div id="equivalent" class="sub-apartado">
+            <p class="encabezado-sa">
+                <b>Equivalent</b>
+            </p>
+            <p class="texto">
+                When we declare two classes as equivalent, we are essentially stating that they represent the same concept or idea within the domain of discourse. This means that any assertion made about one class can be inferred to apply to the other class as well
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/equivalent_1.svg" class="img-mid" />
+            </div>
+            <p class="texto">
+                In this example, we declare that the class Dog is equivalent to the class Canine. This implies that any individual that is classified as a Dog is also considered a Canine, and vice versa. Therefore, any property or relationship defined for Canine would apply equally to Dog, and vice versa.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/equivalent_1_ex.svg" class="img-mid" />
+            </div>
+            <p class="texto">
+                Understanding equivalence is essential for designing clear and concise ontologies. By declaring classes as equivalent, we establish a direct relationship between them, facilitating inference and reasoning processes within the ontology
+            </p>
+        </div>
+        <div id="disjoint" class="sub-apartado">
+            <p class="encabezado-sa">
+                <b>Disjoint</b>
+            </p>
+            <p class="texto">
+                Two classes are considered disjoint if they cannot have any instances in common. In other words, if an individual belongs to one class, it cannot belong to the other class simultaneously.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/disjoint_1.svg" class="img-mid" />
+            </div>
+            <p class="texto">
+                Continuing with our example ontology about animals, we declare that the class Cat is disjoint from the class Dog. This means that there cannot be any individual that is both a Cat and a Dog. They represent distinct categories of animals with no shared instances.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/disjoint_1_ex.svg" class="img-mid" />
+            </div>
+        </div>
+        <div id="functionalproperties" class="sub-apartado">
+            <p class="encabezado-sa">
+                <b>Functional Properties</b>
+            </p>
+            <p class="texto">
+                A functional property restricts the cardinality of a property to one. This means that for any given individual, there can be only one value associated with the property. In other words, each individual can have a unique value for the functional property.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/functional_op_1.svg" class="img-small" />
+            </div>
+            <p class="texto">
+                In the example, husband is declared as a functional property (FunctionalProperty), ensuring that each Woman can have at most one Man as her husband.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/functional_op_1_ex.svg" class="img-small" />
+            </div>
+            <p class="texto">
+                Functional properties are essential for ensuring data consistency and integrity within an ontology. By restricting the cardinality of properties to one, they enable accurate modeling of relationships between individuals and data values, thereby enhancing the ontology's usability and reliability.
+            </p>
+        </div>
+        <div id="inversefunctionalproperties" class="sub-apartado">
+            <p class="encabezado-sa">
+                <b>Inverse Functional Properties</b>
+            </p>
+            <p class="texto">
+                Inverse Functional Properties are the counterparts of functional properties but in the reverse direction. Just as functional properties ensure that each instance of a class can have at most one value for a property, inverse functional properties ensure that each value of a property can uniquely identify at most one instance of a class
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/inverse_functional_op_1.svg" class="img-small" />
+            </div>
+            <p class="texto">
+                This example declares the property biologicalMotherOf as an inverse functional property. It indicates that for each object of biologicalMotherOf statements (some human), one should be able to uniquely identify a subject (some woman).
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/inverse_functional_op_1_ex.svg" class="img-small" />
+            </div>
+        </div>
+        <div id="symmetricproperties" class="sub-apartado">
+            <p class="encabezado-sa">
+                <b>Symmetric Properties</b>
+            </p>
+            <p class="texto">
+                Symmetric properties are those where if a property relates one individual to another, it also relates the second individual back to the first. In other words, if x has the property with respect to y, then y also has the property with respect to x.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/symmetric_op_1.svg" class="img-small" />
+            </div>
+            <p class="texto">
+                Consider a property hasSibling, which indicates that two individuals share the same parent. If John has a sibling named Mary, then Mary also has a sibling named John. This relationship is symmetric
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/symmetric_op_1_ex.svg" class="img-small" />
+            </div>
+        </div>
+        <div id="individuals" class="sub-apartado">
+            <p class="encabezado-sa">
+                <b>Individuals</b>
+            </p>
+            <p class="texto">
+                In this section, we'll explore how individuals are represented in Chowlk notation. Individuals are specific instances or members of classes within an ontology. They represent real-world entities or objects that belong to certain categories or classes defined in the ontology.
+            </p>
+        </div>
+        <div id="classmembership" class="sub-apartado">
+            <p class="encabezado-2">
+                <b>Class Membership</b>
+            </p>
+            <p class="texto">
+                Class membership refers to the relationship between an individual and a class, indicating that the individual belongs to the specified class. This relationship is represented using the rdf:type property, also known as the type assertion.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/individual_class.svg" class="img" />
+            </div>
+            <p class="texto">
+                In this example, "John" is an individual belonging to the class "Person".
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/individual_class_ex.svg" class="img" />
+            </div>
+        </div>
+        <div id="propertyvalues" class="sub-apartado">
+            <p class="encabezado-2">
+                <b>Property Values</b>
+            </p>
+            <p class="texto">
+                Property values describe the attributes or characteristics of individuals within an ontology. These values are represented using object properties and datatype properties to specify relationships between individuals or between individuals and data values.
+            </p>
+            <p class="texto">
+                Association between individuals in RDF graphs.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/property_values_1.svg" class="img-small" />
+            </div>
+            <p class="texto">
+                Association between individuals and datatype values in RDF graphs.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/property_values_2.svg" class="img-small" />
+            </div>
+            <p class="texto">
+                Moreover, costum data values can be defined specifying the prefixes of the datatypes. By default the prefix is xsd.
+            </p>
+            <div style="text-align: center;">
+                <img src="../../assets/img/property_values_3.svg" class="img-small" />
+            </div>
+        </div>
+    </div>
+    <div class="ejercicios">
+        <div id="exercises1" class="apartado">
+            <p class="encabezado-ex">
+                <b>Exercise 1</b>
+            </p>
+            <p class="texto">
+            <b>Task</b>: Define individuals and their class membership <br><br>
+            <b>Instructions</b>:
+            </p>
+            <ul class="texto">
+                <li>Create an individual named "Justin" belonging to the class "Person"</li>
+                <li>Create an individual named "London" belonging to the class "City"</li>
+            </ul>
+            <div style="text-align: center;">
+            <img #diagrama (click)="editarDiagrama()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAABHCAYAAACtfGOtAAAAAXNSR0IArs4c6QAAB4x0RVh0bXhmaWxlACUzQ214ZmlsZSUyMGhvc3QlM0QlMjJhcHAuZGlhZ3JhbXMubmV0JTIyJTIwbW9kaWZpZWQlM0QlMjIyMDI0LTA0LTE2VDE4JTNBNDIlM0E0Ni4xMjBaJTIyJTIwYWdlbnQlM0QlMjJNb3ppbGxhJTJGNS4wJTIwKFdpbmRvd3MlMjBOVCUyMDEwLjAlM0IlMjBXaW42NCUzQiUyMHg2NCklMjBBcHBsZVdlYktpdCUyRjUzNy4zNiUyMChLSFRNTCUyQyUyMGxpa2UlMjBHZWNrbyklMjBDaHJvbWUlMkYxMjMuMC4wLjAlMjBTYWZhcmklMkY1MzcuMzYlMjIlMjBldGFnJTNEJTIyNnB1VE0tWmNxc00xdDQ1S2RHeGolMjIlMjB2ZXJzaW9uJTNEJTIyMjQuMi41JTIyJTIwdHlwZSUzRCUyMmdvb2dsZSUyMiUzRSUwQSUyMCUyMCUzQ2RpYWdyYW0lMjBuYW1lJTNEJTIyUCVDMyVBMWdpbmEtMSUyMiUyMGlkJTNEJTIyaEZwTnREak8tSWhTRFdCT2J1YVolMjIlM0UlMEElMjAlMjAlMjAlMjAlM0NteEdyYXBoTW9kZWwlMjBkeCUzRCUyMjE2NzQlMjIlMjBkeSUzRCUyMjczOCUyMiUyMGdyaWQlM0QlMjIxJTIyJTIwZ3JpZFNpemUlM0QlMjIxMCUyMiUyMGd1aWRlcyUzRCUyMjElMjIlMjB0b29sdGlwcyUzRCUyMjElMjIlMjBjb25uZWN0JTNEJTIyMSUyMiUyMGFycm93cyUzRCUyMjElMjIlMjBmb2xkJTNEJTIyMSUyMiUyMHBhZ2UlM0QlMjIxJTIyJTIwcGFnZVNjYWxlJTNEJTIyMSUyMiUyMHBhZ2VXaWR0aCUzRCUyMjgyNyUyMiUyMHBhZ2VIZWlnaHQlM0QlMjIxMTY5JTIyJTIwbWF0aCUzRCUyMjAlMjIlMjBzaGFkb3clM0QlMjIwJTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDcm9vdCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMCUyMiUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMSUyMiUyMHBhcmVudCUzRCUyMjAlMjIlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteENlbGwlMjBpZCUzRCUyMllDemgtS1VWd0ozVi1leFh3R2tULTElMjIlMjB2YWx1ZSUzRCUyMlBVTFNFJTIwUEFSQSUyMENPTUVOWkFSJTIyJTIwc3R5bGUlM0QlMjJyb3VuZGVkJTNEMCUzQndoaXRlU3BhY2UlM0R3cmFwJTNCaHRtbCUzRDElM0JzbmFwVG9Qb2ludCUzRDElM0Jwb2ludHMlM0QlNUIlNUIwLjElMkMwJTVEJTJDJTVCMC4yJTJDMCU1RCUyQyU1QjAuMyUyQzAlNUQlMkMlNUIwLjQlMkMwJTVEJTJDJTVCMC41JTJDMCU1RCUyQyU1QjAuNiUyQzAlNUQlMkMlNUIwLjclMkMwJTVEJTJDJTVCMC44JTJDMCU1RCUyQyU1QjAuOSUyQzAlNUQlMkMlNUIwJTJDMC4xJTVEJTJDJTVCMCUyQzAuMyU1RCUyQyU1QjAlMkMwLjUlNUQlMkMlNUIwJTJDMC43JTVEJTJDJTVCMCUyQzAuOSU1RCUyQyU1QjAuMSUyQzElNUQlMkMlNUIwLjIlMkMxJTVEJTJDJTVCMC4zJTJDMSU1RCUyQyU1QjAuNCUyQzElNUQlMkMlNUIwLjUlMkMxJTVEJTJDJTVCMC42JTJDMSU1RCUyQyU1QjAuNyUyQzElNUQlMkMlNUIwLjglMkMxJTVEJTJDJTVCMC45JTJDMSU1RCUyQyU1QjElMkMwLjElNUQlMkMlNUIxJTJDMC4zJTVEJTJDJTVCMSUyQzAuNSU1RCUyQyU1QjElMkMwLjclNUQlMkMlNUIxJTJDMC45JTVEJTVEJTNCJTIyJTIwcGFyZW50JTNEJTIyMSUyMiUyMHZlcnRleCUzRCUyMjElMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteEdlb21ldHJ5JTIweCUzRCUyMjMxOSUyMiUyMHklM0QlMjIyMzAlMjIlMjB3aWR0aCUzRCUyMjE5MCUyMiUyMGhlaWdodCUzRCUyMjYwJTIyJTIw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" style="cursor:pointer;margin-top:1rem;margin-bottom:1rem"/>
+                <div class="mostrar-solucion">
+                    <div class="mostrar">
+                        Show/Hide Solution
+                        <mat-icon class="contraer-expander" *ngIf="mostrarSolucion[1]" (click)="solucion(1)">keyboard_arrow_down</mat-icon>
+                        <mat-icon class="contraer-expander" *ngIf="!mostrarSolucion[1]" (click)="solucion(1)">keyboard_arrow_up</mat-icon>
+                    </div>
+                    <img *ngIf="mostrarSolucion[1]" class = "img-small" src = "../../assets/img/exercise1.svg" />
+                </div>
+            </div>
+            <p class="encabezado-ex">
+                <b>Exercise 2</b>
+            </p>
+            <p class="texto">
+            <b>Task</b>: Define object properties and their relationships <br><br>
+            <b>Instructions</b>:
+            </p>
+            <ul class="texto">
+                <li>Define the object property "is_born_in_city" indicating the birthplace of a person</li>
+                <li>Create a relationship between the individual "Justin" and the city "London" using the "is_born_in_city" property</li>
+            </ul>
+            <div style="text-align: center;">
+            <img #diagrama (click)="editarDiagrama()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAABHCAYAAACtfGOtAAAAAXNSR0IArs4c6QAAB4x0RVh0bXhmaWxlACUzQ214ZmlsZSUyMGhvc3QlM0QlMjJhcHAuZGlhZ3JhbXMubmV0JTIyJTIwbW9kaWZpZWQlM0QlMjIyMDI0LTA0LTE2VDE4JTNBNDIlM0E0Ni4xMjBaJTIyJTIwYWdlbnQlM0QlMjJNb3ppbGxhJTJGNS4wJTIwKFdpbmRvd3MlMjBOVCUyMDEwLjAlM0IlMjBXaW42NCUzQiUyMHg2NCklMjBBcHBsZVdlYktpdCUyRjUzNy4zNiUyMChLSFRNTCUyQyUyMGxpa2UlMjBHZWNrbyklMjBDaHJvbWUlMkYxMjMuMC4wLjAlMjBTYWZhcmklMkY1MzcuMzYlMjIlMjBldGFnJTNEJTIyNnB1VE0tWmNxc00xdDQ1S2RHeGolMjIlMjB2ZXJzaW9uJTNEJTIyMjQuMi41JTIyJTIwdHlwZSUzRCUyMmdvb2dsZSUyMiUzRSUwQSUyMCUyMCUzQ2RpYWdyYW0lMjBuYW1lJTNEJTIyUCVDMyVBMWdpbmEtMSUyMiUyMGlkJTNEJTIyaEZwTnREak8tSWhTRFdCT2J1YVolMjIlM0UlMEElMjAlMjAlMjAlMjAlM0NteEdyYXBoTW9kZWwlMjBkeCUzRCUyMjE2NzQlMjIlMjBkeSUzRCUyMjczOCUyMiUyMGdyaWQlM0QlMjIxJTIyJTIwZ3JpZFNpemUlM0QlMjIxMCUyMiUyMGd1aWRlcyUzRCUyMjElMjIlMjB0b29sdGlwcyUzRCUyMjElMjIlMjBjb25uZWN0JTNEJTIyMSUyMiUyMGFycm93cyUzRCUyMjElMjIlMjBmb2xkJTNEJTIyMSUyMiUyMHBhZ2UlM0QlMjIxJTIyJTIwcGFnZVNjYWxlJTNEJTIyMSUyMiUyMHBhZ2VXaWR0aCUzRCUyMjgyNyUyMiUyMHBhZ2VIZWlnaHQlM0QlMjIxMTY5JTIyJTIwbWF0aCUzRCUyMjAlMjIlMjBzaGFkb3clM0QlMjIwJTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDcm9vdCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMCUyMiUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMSUyMiUyMHBhcmVudCUzRCUyMjAlMjIlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteENlbGwlMjBpZCUzRCUyMllDemgtS1VWd0ozVi1leFh3R2tULTElMjIlMjB2YWx1ZSUzRCUyMlBVTFNFJTIwUEFSQSUyMENPTUVOWkFSJTIyJTIwc3R5bGUlM0QlMjJyb3VuZGVkJTNEMCUzQndoaXRlU3BhY2UlM0R3cmFwJTNCaHRtbCUzRDElM0JzbmFwVG9Qb2ludCUzRDElM0Jwb2ludHMlM0QlNUIlNUIwLjElMkMwJTVEJTJDJTVCMC4yJTJDMCU1RCUyQyU1QjAuMyUyQzAlNUQlMkMlNUIwLjQlMkMwJTVEJTJDJTVCMC41JTJDMCU1RCUyQyU1QjAuNiUyQzAlNUQlMkMlNUIwLjclMkMwJTVEJTJDJTVCMC44JTJDMCU1RCUyQyU1QjAuOSUyQzAlNUQlMkMlNUIwJTJDMC4xJTVEJTJDJTVCMCUyQzAuMyU1RCUyQyU1QjAlMkMwLjUlNUQlMkMlNUIwJTJDMC43JTVEJTJDJTVCMCUyQzAuOSU1RCUyQyU1QjAuMSUyQzElNUQlMkMlNUIwLjIlMkMxJTVEJTJDJTVCMC4zJTJDMSU1RCUyQyU1QjAuNCUyQzElNUQlMkMlNUIwLjUlMkMxJTVEJTJDJTVCMC42JTJDMSU1RCUyQyU1QjAuNyUyQzElNUQlMkMlNUIwLjglMkMxJTVEJTJDJTVCMC45JTJDMSU1RCUyQyU1QjElMkMwLjElNUQlMkMlNUIxJTJDMC4zJTVEJTJDJTVCMSUyQzAuNSU1RCUyQyU1QjElMkMwLjclNUQlMkMlNUIxJTJDMC45JTVEJTVEJTNCJTIyJTIwcGFyZW50JTNEJTIyMSUyMiUyMHZlcnRleCUzRCUyMjElMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteEdlb21ldHJ5JTIweCUzRCUyMjMxOSUyMiUyMHklM0QlMjIyMzAlMjIlMjB3aWR0aCUzRCUyMjE5MCUyMiUyMGhlaWdodCUzRCUyMjYwJTIyJTIw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" style="cursor:pointer;margin-top:1rem;margin-bottom:1rem"/>
+                <div class="mostrar-solucion">
+                    <div class="mostrar">
+                        Show/Hide Solution
+                        <mat-icon class="contraer-expander" *ngIf="mostrarSolucion[2]" (click)="solucion(2)">keyboard_arrow_down</mat-icon>
+                        <mat-icon class="contraer-expander" *ngIf="!mostrarSolucion[2]" (click)="solucion(2)">keyboard_arrow_up</mat-icon>
+                    </div>
+                    <img *ngIf="mostrarSolucion[2]" class = "img-small" src = "../../assets/img/exercise2.svg" />
+                </div>
+            </div>
+            <p class="encabezado-ex">
+                <b>Exercise 3</b>
+            </p>
+            <p class="texto">
+            <b>Task</b>: Define subclasses to represent different roles in a band.<br><br>
+            <b>Instructions</b>:
+            </p>
+            <ul class="texto">
+                <li>Define a class called MusicalWork that represents the different types of music that exist</li>
+                <li>Create a subclass of MusicalWork called Opera</li>
+            </ul>
+            <div style="text-align: center;">
+            <img #diagrama (click)="editarDiagrama()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAABHCAYAAACtfGOtAAAAAXNSR0IArs4c6QAAB4x0RVh0bXhmaWxlACUzQ214ZmlsZSUyMGhvc3QlM0QlMjJhcHAuZGlhZ3JhbXMubmV0JTIyJTIwbW9kaWZpZWQlM0QlMjIyMDI0LTA0LTE2VDE4JTNBNDIlM0E0Ni4xMjBaJTIyJTIwYWdlbnQlM0QlMjJNb3ppbGxhJTJGNS4wJTIwKFdpbmRvd3MlMjBOVCUyMDEwLjAlM0IlMjBXaW42NCUzQiUyMHg2NCklMjBBcHBsZVdlYktpdCUyRjUzNy4zNiUyMChLSFRNTCUyQyUyMGxpa2UlMjBHZWNrbyklMjBDaHJvbWUlMkYxMjMuMC4wLjAlMjBTYWZhcmklMkY1MzcuMzYlMjIlMjBldGFnJTNEJTIyNnB1VE0tWmNxc00xdDQ1S2RHeGolMjIlMjB2ZXJzaW9uJTNEJTIyMjQuMi41JTIyJTIwdHlwZSUzRCUyMmdvb2dsZSUyMiUzRSUwQSUyMCUyMCUzQ2RpYWdyYW0lMjBuYW1lJTNEJTIyUCVDMyVBMWdpbmEtMSUyMiUyMGlkJTNEJTIyaEZwTnREak8tSWhTRFdCT2J1YVolMjIlM0UlMEElMjAlMjAlMjAlMjAlM0NteEdyYXBoTW9kZWwlMjBkeCUzRCUyMjE2NzQlMjIlMjBkeSUzRCUyMjczOCUyMiUyMGdyaWQlM0QlMjIxJTIyJTIwZ3JpZFNpemUlM0QlMjIxMCUyMiUyMGd1aWRlcyUzRCUyMjElMjIlMjB0b29sdGlwcyUzRCUyMjElMjIlMjBjb25uZWN0JTNEJTIyMSUyMiUyMGFycm93cyUzRCUyMjElMjIlMjBmb2xkJTNEJTIyMSUyMiUyMHBhZ2UlM0QlMjIxJTIyJTIwcGFnZVNjYWxlJTNEJTIyMSUyMiUyMHBhZ2VXaWR0aCUzRCUyMjgyNyUyMiUyMHBhZ2VIZWlnaHQlM0QlMjIxMTY5JTIyJTIwbWF0aCUzRCUyMjAlMjIlMjBzaGFkb3clM0QlMjIwJTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDcm9vdCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMCUyMiUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMSUyMiUyMHBhcmVudCUzRCUyMjAlMjIlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteENlbGwlMjBpZCUzRCUyMllDemgtS1VWd0ozVi1leFh3R2tULTElMjIlMjB2YWx1ZSUzRCUyMlBVTFNFJTIwUEFSQSUyMENPTUVOWkFSJTIyJTIwc3R5bGUlM0QlMjJyb3VuZGVkJTNEMCUzQndoaXRlU3BhY2UlM0R3cmFwJTNCaHRtbCUzRDElM0JzbmFwVG9Qb2ludCUzRDElM0Jwb2ludHMlM0QlNUIlNUIwLjElMkMwJTVEJTJDJTVCMC4yJTJDMCU1RCUyQyU1QjAuMyUyQzAlNUQlMkMlNUIwLjQlMkMwJTVEJTJDJTVCMC41JTJDMCU1RCUyQyU1QjAuNiUyQzAlNUQlMkMlNUIwLjclMkMwJTVEJTJDJTVCMC44JTJDMCU1RCUyQyU1QjAuOSUyQzAlNUQlMkMlNUIwJTJDMC4xJTVEJTJDJTVCMCUyQzAuMyU1RCUyQyU1QjAlMkMwLjUlNUQlMkMlNUIwJTJDMC43JTVEJTJDJTVCMCUyQzAuOSU1RCUyQyU1QjAuMSUyQzElNUQlMkMlNUIwLjIlMkMxJTVEJTJDJTVCMC4zJTJDMSU1RCUyQyU1QjAuNCUyQzElNUQlMkMlNUIwLjUlMkMxJTVEJTJDJTVCMC42JTJDMSU1RCUyQyU1QjAuNyUyQzElNUQlMkMlNUIwLjglMkMxJTVEJTJDJTVCMC45JTJDMSU1RCUyQyU1QjElMkMwLjElNUQlMkMlNUIxJTJDMC4zJTVEJTJDJTVCMSUyQzAuNSU1RCUyQyU1QjElMkMwLjclNUQlMkMlNUIxJTJDMC45JTVEJTVEJTNCJTIyJTIwcGFyZW50JTNEJTIyMSUyMiUyMHZlcnRleCUzRCUyMjElMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteEdlb21ldHJ5JTIweCUzRCUyMjMxOSUyMiUyMHklM0QlMjIyMzAlMjIlMjB3aWR0aCUzRCUyMjE5MCUyMiUyMGhlaWdodCUzRCUyMjYwJTIyJTIw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" style="cursor:pointer;margin-top:1rem;margin-bottom:1rem"/>
+                <div class="mostrar-solucion">
+                    <div class="mostrar">
+                        Show/Hide Solution
+                        <mat-icon class="contraer-expander" *ngIf="mostrarSolucion[3]" (click)="solucion(3)">keyboard_arrow_down</mat-icon>
+                        <mat-icon class="contraer-expander" *ngIf="!mostrarSolucion[3]" (click)="solucion(3)">keyboard_arrow_up</mat-icon>
+                    </div>
+                    <img *ngIf="mostrarSolucion[3]" class = "img-small" src = "../../assets/img/exercise3.svg" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

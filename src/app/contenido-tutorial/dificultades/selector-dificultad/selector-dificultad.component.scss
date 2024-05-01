@@ -1,0 +1,38 @@
+  .difficulty-selector{
+    text-align: center;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+  }
+  button{
+    width: 144px;
+    height: 55px;
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  button:hover{
+    transform: scale(1.15);
+    filter: brightness(0.6);
+  }
+  
+  .btn-basic{
+    background-color: #5cb85c;
+    color: #fff;
+  }
+  
+  .btn-medium{
+    background-color: #f0ad4e;
+    color: #fff;
+  }
+  
+  .btn-advanced{
+    background-color: #d9534f;
+    color: #fff;
+  }

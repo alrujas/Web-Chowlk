@@ -19,13 +19,16 @@
             border-bottom: rgb(151, 151, 151) solid 1px;
         }
         .contenido{
-            padding-left: 1.25rem;
             .principal{
                 display: flex;
                 flex-wrap: nowrap;
                 justify-content: space-between;
+                padding-left: 0.75rem;
                 font-size: 1.5rem;
                 padding-bottom: 0.75rem;
+                .contraer-expander{
+                    cursor: pointer;
+                }
             }
             .secundario{
                 display: flex;
@@ -72,6 +75,9 @@
                 justify-content: space-between;
                 font-size: 1rem;
                 padding-bottom: 0.75rem;
+                .contraer-expander{
+                    cursor: pointer;
+                }
             }
             .secundario{
                 display: flex;
@@ -117,6 +123,9 @@
                 justify-content: space-between;
                 font-size: 1.35rem;
                 padding-bottom: 0.75rem;
+                .contraer-expander{
+                    cursor: pointer;
+                }
             }
             .secundario{
                 display: flex;

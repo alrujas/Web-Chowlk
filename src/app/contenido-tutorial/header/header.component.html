@@ -1,11 +1,16 @@
 <div class="contenido" [ngClass]="dispositivo">
-    <img src = "../../../assets/img/chowlk.png" alt="logo-chowlk" class = "logo-chowlk">
+    <div class="inicio-indicador">
+        <img src = "../../../assets/img/chowlk.png" alt="logo-chowlk" class = "logo-chowlk">
+        <div class="indicador">
+            <div [ngClass]="apartado" class="opcion">{{apartado}}</div>
+        </div>
+    </div>
     <div class = "barra-navegacion">
-        <p class = "no-seleccionado">Converter</p>
-        <p class = "no-seleccionado">Notation</p>
-        <p class = "no-seleccionado">Examples</p>
+        <a href="https://chowlk.linkeddata.es/index.html" class = "no-seleccionado">Converter</a>
+        <a href="https://chowlk.linkeddata.es/notation.html" class = "no-seleccionado">Notation</a>
+        <a href="https://chowlk.linkeddata.es/examples.html" class = "no-seleccionado">Examples</a>
         <a href="index.html" class="seleccionado">Tutorial</a>
-        <p class = "no-seleccionado">About</p>
+        <a href="https://chowlk.linkeddata.es/about.html" class = "no-seleccionado">About</a>
         <a href="https://github.com/oeg-upm/Chowlk">
             <img src = "../../../assets/img/github.png" alt="logo-github" class = "logo-github">
         </a>

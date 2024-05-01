@@ -3,129 +3,225 @@
     <h4 class="titulo">Table of Contents</h4>
     <div class="contenido">
         <div class="principal">
-            <a href="#getting-started" class="link">
-            Tutorial: Your First Experience
-            </a>
-        </div>
-        <div class="secundario">
             <a href="#introduction" class="link">
-            Introduction
+                Basic
             </a>
+            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="apartado == 'Basic'">keyboard_arrow_up</mat-icon>
+            <mat-icon class="contraer-expander" (click)="expandirDificultad('Basic')" *ngIf="apartado != 'Basic'">keyboard_arrow_down</mat-icon>
         </div>
-        <div class="secundario">
-            <a href="" class="link">
-                Classes
-            </a>
+        <div *ngIf="apartado == 'Basic'">
+            <div class="secundario">
+                <a [routerLink]="['Basic']" fragment="specification" (click)="scrollToSelector('specification')" class="link">
+                    Specification
+                </a>
+            </div>
+            <div class="terciario">
+                <a [routerLink]="['Basic']" fragment="classidentifier" (click)="scrollToSelector('classidentifier')" class="link">
+                    Class identifier
+                </a>
+            </div>
+            <div class="terciario">
+                <a [routerLink]="['Basic']" fragment="subclass" (click)="scrollToSelector('subclass')" class="link">
+                    Subclass
+                </a>
+            </div>
+            <div class="terciario">
+                <a [routerLink]="['Basic']" fragment="objectproperties" (click)="scrollToSelector('objectproperties')" class="link">
+                    Object Properties
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a [routerLink]="['Basic']" fragment="domainandrange1" (click)="scrollToSelector('domainandrange1')" class="link">
+                    Domain and Range
+                </a>
+            </div>
+            <div class="terciario">
+                <a [routerLink]="['Basic']" fragment="datatypeproperties" (click)="scrollToSelector('datatypeproperties')" class="link">
+                    Datatype Properties
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a [routerLink]="['Basic']" fragment="domainandrange2" (click)="scrollToSelector('domainandrange2')" class="link">
+                    Domain and Range
+                </a>
+            </div>
+            <div class="terciario">
+                 <a [routerLink]="['Basic']" fragment="subproperty" (click)="scrollToSelector('subproperty')" class="link">
+                    Sub-Property
+                </a>
+            </div>
+            <div class="terciario">
+                <a [routerLink]="['Basic']" fragment="individuals" (click)="scrollToSelector('individuals')" class="link">
+                    Individuals
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a [routerLink]="['Basic']" fragment="classmembership" (click)="scrollToSelector('classmembership')" class="link">
+                    Class Membership
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a [routerLink]="['Basic']" fragment="propertyvalues" (click)="scrollToSelector('propertyvalues')" class="link">
+                    Property Values
+                </a>
+            </div>
         </div>
-        <div class="terciario">
-            <a href="" class="link">
-                Class Description
+    </div>
+    <div class="contenido">
+        <div class="principal">
+            <a href="#getting-started" class="link">
+                Medium
             </a>
+            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="apartado == 'Medium'">keyboard_arrow_up</mat-icon>
+            <mat-icon class="contraer-expander" (click)="expandirDificultad('Medium')" *ngIf="apartado != 'Medium'">keyboard_arrow_down</mat-icon>
         </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Enumeration
-            </a>
+        <div *ngIf="apartado == 'Medium'">
+            <div class="secundario">
+                <a href="#introduction" class="link">
+                Introduction
+                </a>
+            </div>
+            <div class="secundario">
+                <a href="#specification2" class="link">
+                    Specification
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#equivalent" class="link">
+                    Equivalent
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#disjoint" class="link">
+                    Disjoint
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#functionalproperties" class="link">
+                    Functional Properties
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#inversefunctionalproperties" class="link">
+                    Inverse Functional Properties
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#symmetricproperties" class="link">
+                    Symmetric Properties
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#transitiveproperties" class="link">
+                    Transitive Properties
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#functionalproperties" class="link">
+                    Functional Properties
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#equivalentproperty" class="link">
+                    Equivalent Property
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#inverseproperty" class="link">
+                    Inverse Property
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#disjointproperties" class="link">
+                    Disjoint Properties
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#sameas" class="link">
+                    Same As
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#differentfrom" class="link">
+                    Different From
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#alldiferent" class="link">
+                    All Different
+                </a>
+            </div>
         </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Restrictions
+    </div>
+    <div class="contenido">
+        <div class="principal">
+            <a href="#getting-started" class="link">
+                Advanced
             </a>
+            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="apartado == 'Advanced'">keyboard_arrow_up</mat-icon>
+            <mat-icon class="contraer-expander" (click)="expandirDificultad('Advanced')" *ngIf="apartado != 'Advanced'">keyboard_arrow_down</mat-icon>
         </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Intersection, union and complement
-            </a>
-        </div>
-        <div class="terciario">
-            <a href="" class="link">
-                Class axioms
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Subclass
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Equivalent
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Disjoint
-            </a>
-        </div>
-        <div class="secundario">
-            <a href="" class="link">
-                Properties
-            </a>
-        </div>
-        <div class="terciario">
-            <a href="" class="link">
-                RDF Schema constructs
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Sub Property
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Domain
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Range
-            </a>
-        </div>
-        <div class="terciario">
-            <a href="" class="link">
-                Relations to other properties
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Equivalent Property
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Inverse
-            </a>
-        </div>
-        <div class="terciario">
-            <a href="" class="link">
-                Cardinality
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Functional Property
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Inverse Functional Property
-            </a>
-        </div>
-        <div class="terciario">
-            <a href="" class="link">
-                Logical Characteristics
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Transitive Property
-            </a>
-        </div>
-        <div class="cuaternario">
-            <a href="" class="link">
-                Symmetric Property
-            </a>
+        <div *ngIf="apartado == 'Advanced'">
+            <div class="secundario">
+                <a href="#introduction" class="link">
+                Introduction
+                </a>
+            </div>
+            <div class="secundario">
+                <a href="#specification3" class="link">
+                    Specification
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#classdescriptions" class="link">
+                    Class Descriptions
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a href="#enumeration" class="link">
+                    Enumeration
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a href="#restriction" class="link">
+                    Restriction
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a href="#valueconstraints" class="link">
+                    Value Constraints
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a href="#cardinalityconstraints" class="link">
+                    Cardinality Constraints
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a href="#qualifiedcardinalityconstraints" class="link">
+                    Qualified Cardinality Constraints
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a href="#intersection" class="link">
+                    Intersection
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a href="#union" class="link">
+                    Union
+                </a>
+            </div>
+            <div class="cuaternario">
+                <a href="#complement" class="link">
+                    Complement
+                </a>
+            </div>
+            <div class="terciario">
+                <a href="#enumerateddatatypes" class="link">
+                    Enumerated Datatypes
+                </a>
+            </div>
         </div>
     </div>
 </div>

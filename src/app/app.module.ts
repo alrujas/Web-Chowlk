@@ -9,13 +9,21 @@ import { HeaderComponent } from './contenido-tutorial/header/header.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatIconModule } from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BasicoComponent } from './contenido-tutorial/dificultades/basico/basico.component';
+import { MedioComponent } from './contenido-tutorial/dificultades/medio/medio.component';
+import { AdvancedComponent } from './contenido-tutorial/dificultades/advanced/advanced.component';
+import { SelectorDificultadComponent } from './contenido-tutorial/dificultades/selector-dificultad/selector-dificultad.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TablaContenidosComponent,
     ContenidoTutorialComponent,
-    HeaderComponent
+    HeaderComponent,
+    BasicoComponent,
+    MedioComponent,
+    AdvancedComponent,
+    SelectorDificultadComponent
   ],
   imports: [
     BrowserModule,

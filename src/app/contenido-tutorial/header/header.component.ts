@@ -9,6 +9,7 @@ import { OcultarTablaService } from '../../services/ocultar-tabla.service';
 export class HeaderComponent {
 @Input() dispositivo!:string;
 @Input() extendido!:boolean;
+@Input() apartado!:string;
 
 constructor(public ocultarTablaService: OcultarTablaService){}
 expandirTabla(){
