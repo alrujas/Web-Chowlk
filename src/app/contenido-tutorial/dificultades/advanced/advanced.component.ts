@@ -1,9 +1,9 @@
 import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { DiagramEditorService } from '../../../services/diagram-editor.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ResponsiveService } from '../../../services/responsive.service';
 import { DISPOSITIVOS } from '../../../constantes/constantes-responsive';
 import { Subscription } from 'rxjs';
-import { ResponsiveService } from '../../../services/responsive.service';
+import { ScrollToService } from '../../../services/scroll-to.service';
 
 @Component({
   selector: 'app-advanced',
@@ -11,16 +11,23 @@ import { ResponsiveService } from '../../../services/responsive.service';
   styleUrl: './advanced.component.scss'
 })
 export class AdvancedComponent {
-  
-  mostrarSolucion = false;
-  
   @ViewChild('diagrama', { static: true }) diagramaRef: ElementRef;
 
+  isFlipped = [ 
+    { id : 0, valor: false },
+    { id : 1, valor: false },
+    { id : 2, valor: false },
+    { id : 3, valor: false }
+  ]
+  
   dispositivo: string = DISPOSITIVOS.COMPUTER;
 
   responsiveChanges?: Subscription;
 
-  constructor(private diagram : DiagramEditorService, private responsiveService: ResponsiveService, private changeDetector : ChangeDetectorRef){}
+  apartadoChanges?: Subscription;
+
+  constructor(private diagram : DiagramEditorService, private responsiveService: ResponsiveService, 
+    private changeDetector : ChangeDetectorRef, private scrollTo : ScrollToService, private elementRef : ElementRef){}
 
   ngOnInit(){
     this.responsiveChanges = this.responsiveService.getDispositivoActual()
@@ -28,6 +35,10 @@ export class AdvancedComponent {
       this.dispositivo = dispositivoActual;
       this.changeDetector.detectChanges();
   });
+    this.apartadoChanges = this.scrollTo.getApartado().subscribe(apartado => {
+      this.scrollToSelector(apartado);
+      this.changeDetector.detectChanges;
+    });
   }
 
   editarDiagrama(){
@@ -35,7 +46,16 @@ export class AdvancedComponent {
     this.diagram.editElement(diagramaElemento);
   }
   
-  solucion(){
-    this.mostrarSolucion = !this.mostrarSolucion;
+  toggleFlip(posicion: number): void {
+    this.isFlipped[posicion].valor = !this.isFlipped[posicion].valor;
   }
+
+  scrollToSelector(apartado : string){
+    const specificationElement = this.elementRef.nativeElement.querySelector('#' + apartado);
+    if (specificationElement) {
+      
+      specificationElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  
 }

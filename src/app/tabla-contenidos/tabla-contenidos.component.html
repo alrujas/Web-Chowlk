@@ -6,10 +6,10 @@
             <a href="#introduction" class="link">
                 Basic
             </a>
-            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="apartado == 'Basic'">keyboard_arrow_up</mat-icon>
-            <mat-icon class="contraer-expander" (click)="expandirDificultad('Basic')" *ngIf="apartado != 'Basic'">keyboard_arrow_down</mat-icon>
+            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="diffTabla == 'Basic'">keyboard_arrow_up</mat-icon>
+            <mat-icon class="contraer-expander" (click)="expandirDificultad('Basic')" *ngIf="diffTabla != 'Basic'">keyboard_arrow_down</mat-icon>
         </div>
-        <div *ngIf="apartado == 'Basic'">
+        <div *ngIf="diffTabla == 'Basic'">
             <div class="secundario">
                 <a [routerLink]="['Basic']" fragment="specification" (click)="scrollToSelector('specification')" class="link">
                     Specification
@@ -69,85 +69,80 @@
     </div>
     <div class="contenido">
         <div class="principal">
-            <a href="#getting-started" class="link">
+            <a href="#introduction" class="link">
                 Medium
             </a>
-            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="apartado == 'Medium'">keyboard_arrow_up</mat-icon>
-            <mat-icon class="contraer-expander" (click)="expandirDificultad('Medium')" *ngIf="apartado != 'Medium'">keyboard_arrow_down</mat-icon>
+            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="diffTabla == 'Medium'">keyboard_arrow_up</mat-icon>
+            <mat-icon class="contraer-expander" (click)="expandirDificultad('Medium')" *ngIf="diffTabla != 'Medium'">keyboard_arrow_down</mat-icon>
         </div>
-        <div *ngIf="apartado == 'Medium'">
+        <div *ngIf="diffTabla == 'Medium'">
             <div class="secundario">
-                <a href="#introduction" class="link">
-                Introduction
-                </a>
-            </div>
-            <div class="secundario">
-                <a href="#specification2" class="link">
+                <a [routerLink]="['Medium']" fragment="specification2" (click)="scrollToSelector('specification2')" class="link">
                     Specification
                 </a>
             </div>
             <div class="terciario">
-                <a href="#equivalent" class="link">
+                <a [routerLink]="['Medium']" fragment="equivalent" (click)="scrollToSelector('equivalent')" class="link">
                     Equivalent
                 </a>
             </div>
             <div class="terciario">
-                <a href="#disjoint" class="link">
+                <a [routerLink]="['Medium']" fragment="disjoint" (click)="scrollToSelector('disjoint')" class="link">
                     Disjoint
                 </a>
             </div>
             <div class="terciario">
-                <a href="#functionalproperties" class="link">
-                    Functional Properties
+                <a [routerLink]="['Medium']" fragment="functionalproperties" (click)="scrollToSelector('functionalproperties')" class="link">
+                    Functional Properties Object
                 </a>
             </div>
             <div class="terciario">
-                <a href="#inversefunctionalproperties" class="link">
+                <a [routerLink]="['Medium']" fragment="inversefunctionalproperties" (click)="scrollToSelector('inversefunctionalproperties')" class="link">
                     Inverse Functional Properties
                 </a>
             </div>
             <div class="terciario">
-                <a href="#symmetricproperties" class="link">
+                <a [routerLink]="['Medium']" fragment="symmetricproperties" (click)="scrollToSelector('symmetricproperties')" class="link">
                     Symmetric Properties
                 </a>
             </div>
             <div class="terciario">
-                <a href="#transitiveproperties" class="link">
+                <a [routerLink]="['Medium']" fragment="transitiveproperties" (click)="scrollToSelector('transitiveproperties')" class="link">
                     Transitive Properties
                 </a>
             </div>
             <div class="terciario">
-                <a href="#functionalproperties" class="link">
-                    Functional Properties
-                </a>
-            </div>
-            <div class="terciario">
-                <a href="#equivalentproperty" class="link">
+                <a [routerLink]="['Medium']" fragment="equivalentproperty" (click)="scrollToSelector('equivalentproperty')" class="link">
                     Equivalent Property
                 </a>
             </div>
             <div class="terciario">
-                <a href="#inverseproperty" class="link">
+                <a [routerLink]="['Medium']" fragment="inverseproperty" (click)="scrollToSelector('inverseproperty')" class="link">
                     Inverse Property
                 </a>
             </div>
             <div class="terciario">
-                <a href="#disjointproperties" class="link">
-                    Disjoint Properties
+                <a [routerLink]="['Medium']" fragment="disjointproperty" (click)="scrollToSelector('disjointproperty')" class="link">
+                    Disjoint Property
                 </a>
             </div>
             <div class="terciario">
-                <a href="#sameas" class="link">
+                <a [routerLink]="['Medium']" fragment="functionalproperties2" (click)="scrollToSelector('functionalproperties2')" class="link">
+                    Functional Properties Datatype
+                </a>
+            </div>
+            <div class="terciario">
+                <a [routerLink]="['Medium']" fragment="sameas" (click)="scrollToSelector('sameas')" class="link">
                     Same As
                 </a>
             </div>
             <div class="terciario">
-                <a href="#differentfrom" class="link">
+                <a [routerLink]="['Medium']" fragment="differentfrom" (click)="scrollToSelector('differentfrom')" class="link">
                     Different From
                 </a>
             </div>
             <div class="terciario">
-                <a href="#alldiferent" class="link">
+                <a [routerLink]="['Medium']" fragment="alldifferent" (click)="scrollToSelector('alldifferent')" class="link">
                     All Different
                 </a>
             </div>
@@ -155,70 +150,65 @@
     </div>
     <div class="contenido">
         <div class="principal">
-            <a href="#getting-started" class="link">
+            <a href="#introduction" class="link">
                 Advanced
             </a>
-            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="apartado == 'Advanced'">keyboard_arrow_up</mat-icon>
-            <mat-icon class="contraer-expander" (click)="expandirDificultad('Advanced')" *ngIf="apartado != 'Advanced'">keyboard_arrow_down</mat-icon>
+            <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="diffTabla == 'Advanced'">keyboard_arrow_up</mat-icon>
+            <mat-icon class="contraer-expander" (click)="expandirDificultad('Advanced')" *ngIf="diffTabla != 'Advanced'">keyboard_arrow_down</mat-icon>
         </div>
-        <div *ngIf="apartado == 'Advanced'">
+        <div *ngIf="diffTabla == 'Advanced'">
             <div class="secundario">
-                <a href="#introduction" class="link">
-                Introduction
-                </a>
-            </div>
-            <div class="secundario">
-                <a href="#specification3" class="link">
+                <a [routerLink]="['Advanced']" fragment="specification3" (click)="scrollToSelector('specification3')" class="link">
                     Specification
                 </a>
             </div>
             <div class="terciario">
-                <a href="#classdescriptions" class="link">
+                <a [routerLink]="['Advanced']" fragment="classdescriptions" (click)="scrollToSelector('classdescriptions')" class="link">
                     Class Descriptions
                 </a>
             </div>
             <div class="cuaternario">
-                <a href="#enumeration" class="link">
+                <a [routerLink]="['Advanced']" fragment="enumeration" (click)="scrollToSelector('enumeration')" class="link">
                     Enumeration
                 </a>
             </div>
             <div class="cuaternario">
-                <a href="#restriction" class="link">
+                <a [routerLink]="['Advanced']" fragment="restriction" (click)="scrollToSelector('restriction')" class="link">
                     Restriction
                 </a>
             </div>
-            <div class="cuaternario">
-                <a href="#valueconstraints" class="link">
+            <div class="quinario">
+                <a [routerLink]="['Advanced']" fragment="valueconstraints" (click)="scrollToSelector('valueconstraints')" class="link">
                     Value Constraints
                 </a>
             </div>
-            <div class="cuaternario">
-                <a href="#cardinalityconstraints" class="link">
+            <div class="quinario">
+                <a [routerLink]="['Advanced']" fragment="cardinalityconstraints" (click)="scrollToSelector('cardinalityconstraints')" class="link">
                     Cardinality Constraints
                 </a>
             </div>
-            <div class="cuaternario">
-                <a href="#qualifiedcardinalityconstraints" class="link">
+            <div class="quinario">
+                <a [routerLink]="['Advanced']" fragment="qualifiedcardinalityconstraints" (click)="scrollToSelector('qualifiedcardinalityconstraints')" class="link">
                     Qualified Cardinality Constraints
                 </a>
             </div>
             <div class="cuaternario">
-                <a href="#intersection" class="link">
+                <a [routerLink]="['Advanced']" fragment="intersection" (click)="scrollToSelector('intersection')" class="link">
                     Intersection
                 </a>
             </div>
             <div class="cuaternario">
-                <a href="#union" class="link">
+                <a [routerLink]="['Advanced']" fragment="union" (click)="scrollToSelector('union')" class="link">
                     Union
                 </a>
             </div>
             <div class="cuaternario">
-                <a href="#complement" class="link">
+                <a [routerLink]="['Advanced']" fragment="complement" (click)="scrollToSelector('complement')" class="link">
                     Complement
                 </a>
             </div>
             <div class="terciario">
-                <a href="#enumerateddatatypes" class="link">
+                <a [routerLink]="['Advanced']" fragment="enumerateddatatypes" (click)="scrollToSelector('enumerateddatatypes')" class="link">
                     Enumerated Datatypes
                 </a>
             </div>

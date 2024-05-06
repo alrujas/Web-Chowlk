@@ -5,7 +5,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ScrollToService {
-  public scrollToChange: Subject<string> = new BehaviorSubject<string>(""
+  public scrollToChange: Subject<string> = new BehaviorSubject<string>("introduction"
   );
 
   public getApartado(){

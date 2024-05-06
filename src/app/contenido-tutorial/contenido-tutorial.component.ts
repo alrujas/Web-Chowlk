@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter} from '@angular/core';
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import Aos from 'aos';
+import { ChangeDifficultyService } from '../services/change-difficulty.service';
 
 @Component({
   selector: 'app-contenido-tutorial',
@@ -10,10 +11,15 @@ export class ContenidoTutorialComponent{
   @Input() dispositivo!:string;
   @Input() extendido!:boolean;
   @Input() apartado!:string;
-  @Output() apartadoChange = new EventEmitter<string>()
+  
+  constructor(private changeDiff: ChangeDifficultyService){}
 
+  ngOnInit(){
+    Aos.init();
+    window.addEventListener('load', Aos.refresh);
+  }
+  
   onDifficultySelected(difficulty: string) {
-    this.apartado = difficulty;
-    this.apartadoChange.emit(this.apartado);
+    this.changeDiff.setDificultad(difficulty);
   }
 }

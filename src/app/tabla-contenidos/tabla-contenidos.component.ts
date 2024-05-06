@@ -1,6 +1,8 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import { OcultarTablaService } from '../services/ocultar-tabla.service';
 import { ScrollToService } from '../services/scroll-to.service';
+import { ChangeDifficultyService } from '../services/change-difficulty.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -10,21 +12,38 @@ import { ScrollToService } from '../services/scroll-to.service';
 })
 export class TablaContenidosComponent {
   @Input() dispositivo!:string;
-  @Input() apartado!:string;
 
-  
-  constructor(public ocultarTablaService : OcultarTablaService, private scrollTo : ScrollToService){}
+  diffChanges?: Subscription;
+
+  diff = "";
+  diffTabla = "";
+
+  constructor(public ocultarTablaService : OcultarTablaService, private scrollTo : ScrollToService, 
+    private changeDetector : ChangeDetectorRef, public changeDiff: ChangeDifficultyService){}
+
+  ngOnInit(){
+    this.diffChanges = this.changeDiff.getDificultad()
+    .subscribe(diffActual => {
+      this.diff = diffActual;
+      this.diffTabla = diffActual;
+      this.changeDetector.detectChanges();
+    });
+  }
 
   contraerTabla(){
     this.ocultarTablaService.setValorOcultar(true);
   }
+
   contraerDificultad(){
-    this.apartado = '';
+    this.diffTabla = "";
   }
+  
   expandirDificultad(dificultad: string){
-    this.apartado = dificultad;
+    this.diffTabla = dificultad;
   }
+  
   scrollToSelector(apartado : string): void {
+    this.changeDiff.setDificultad(this.diffTabla);
     this.scrollTo.setApartado(apartado);
   }
 }

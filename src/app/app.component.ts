@@ -18,7 +18,6 @@ export class AppComponent implements OnInit{
   //responsive
   responsiveChanges?: Subscription;
   dispositivo: string = DISPOSITIVOS.COMPUTER;
-  apartado = '';
 
   constructor(
     public responsiveService : ResponsiveService,

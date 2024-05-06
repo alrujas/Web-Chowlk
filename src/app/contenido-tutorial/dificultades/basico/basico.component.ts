@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { DiagramEditorService } from '../../../services/diagram-editor.service';
 import { ResponsiveService } from '../../../services/responsive.service';
 import { Subscription } from 'rxjs';
@@ -18,14 +18,14 @@ export class BasicoComponent {
 
   apartadoChanges?: Subscription;
 
-  mostrarSolucion : {[key:number] : boolean } = {
-    1: false,
-    2: false,
-    3: false,
-    4: false
-  }
   @ViewChild('diagrama', { static: true }) diagramaRef: ElementRef;
 
+  isFlipped = [ 
+    { id : 0, valor: false },
+    { id : 1, valor: false },
+    { id : 2, valor: false }
+  ]
+  
   constructor(private diagram : DiagramEditorService, private responsiveService: ResponsiveService, 
     private changeDetector : ChangeDetectorRef, private scrollTo : ScrollToService, private elementRef : ElementRef){}
 
@@ -38,16 +38,16 @@ export class BasicoComponent {
     this.apartadoChanges = this.scrollTo.getApartado().subscribe(apartado => {
       this.scrollToSelector(apartado);
       this.changeDetector.detectChanges;
-    })
+    });
   }
 
   editarDiagrama(){
     const diagramaElemento: HTMLImageElement | HTMLObjectElement = this.diagramaRef.nativeElement;
     this.diagram.editElement(diagramaElemento);
   }
-  
-  solucion(posicion: number){
-    this.mostrarSolucion[posicion]= !this.mostrarSolucion[posicion];
+
+  toggleFlip(posicion: number): void {
+    this.isFlipped[posicion].valor = !this.isFlipped[posicion].valor;
   }
 
   scrollToSelector(apartado : string){
