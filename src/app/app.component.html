@@ -1,4 +1,4 @@
 <div class = "tutorial" [ngClass]="dispositivo">
-  <app-tabla-contenidos *ngIf="!ocultar" [dispositivo]="dispositivo" class = "tabla-contenidos"></app-tabla-contenidos>
-  <app-contenido-tutorial [dispositivo]="dispositivo" [extendido]="ocultar" [ngClass] = "ocultar ? 'contenido-tutorial-extendido' : 'contenido-tutorial'"></app-contenido-tutorial>
+  <app-tabla-contenidos *ngIf="!ocultar || (dispositivo!= 'mobile')" [dispositivo]="dispositivo" class = "tabla-contenidos"></app-tabla-contenidos>
+  <app-contenido-tutorial [dispositivo]="dispositivo" [extendido]="ocultar" [ngClass] = "(ocultar && dispositivo=='mobile') ? 'contenido-tutorial-extendido' : 'contenido-tutorial'"></app-contenido-tutorial>
 </div>

@@ -10,7 +10,7 @@
             <p class="texto">
                 A class description in OWL serves to define or describe a class within an ontology. These descriptions can take various forms, each serving a distinct purpose in specifying the characteristics and constraints of the class. OWL identifies six primary types of class descriptions:
             </p>
-            <ul class="texto">
+            <ul *ngIf="dispositivo == 'computer'" class="texto">
                 <li><b>Class Identifier:</b> This type of description specifies a class by its unique URI reference, essentially associating a class name with its identity within the ontology.</li>  
                 <li><b>Exhaustive Enumeration:</b> Here, the class is defined by enumerating all the individual instances that belong to it. This exhaustive list collectively represents the instances of the class.</li>
                 <li><b>Property Restriction:</b> In this type of description, constraints are imposed on the properties of instances belonging to the class. These restrictions help refine the definition of the class by specifying certain property-value combinations that its instances must satisfy.</li>
@@ -18,6 +18,14 @@
                 <li><b>Union:</b> Conversely, a union description combines multiple class descriptions to define a new class that includes instances that satisfy the constraints of any of the unioned classes.</li>
                 <li><b>Complement:</b> This type of description defines a class by specifying the instances that do not belong to another class. It essentially represents the complement of the specified class.</li>
             </ul>
+            <p *ngIf="dispositivo != 'computer'" class = "texto">
+                <b>Class Identifier:</b> This type of description specifies a class by its unique URI reference, essentially associating a class name with its identity within the ontology. <br><br>  
+                <b>Exhaustive Enumeration:</b> Here, the class is defined by enumerating all the individual instances that belong to it. This exhaustive list collectively represents the instances of the class. <br><br>  
+                <b>Property Restriction:</b> In this type of description, constraints are imposed on the properties of instances belonging to the class. These restrictions help refine the definition of the class by specifying certain property-value combinations that its instances must satisfy. <br><br>  
+                <b>Intersection:</b> An intersection description involves combining two or more class descriptions to define a new class that includes only those instances that satisfy all the constraints imposed by each of the intersected classes. <br><br>  
+                <b>Union:</b> Conversely, a union description combines multiple class descriptions to define a new class that includes instances that satisfy the constraints of any of the unioned classes. <br><br>  
+                <b>Complement:</b> This type of description defines a class by specifying the instances that do not belong to another class. It essentially represents the complement of the specified class. <br> 
+            </p>
             <p class="texto">
                 While the first type uniquely identifies a class by its name through a URI reference, the remaining five types describe anonymous classes by imposing constraints on the class extension, thereby refining the definition of the class without explicitly naming it.
             </p>
@@ -46,10 +54,14 @@
             <p class="texto">
                 In OWL, a restriction on a property serves as a way to define a specific class of individuals based on certain conditions. There are two main types of property restrictions.
             </p>
-            <ul class="texto">
+            <ul *ngIf="dispositivo == 'computer'" class="texto">
                 <li><b>Value Constraint: </b>This type of restriction sets boundaries or limitations on the possible values that a property can have when associated with instances of a particular class. Essentially, it defines what kind of values are allowed for that property within the context of the class being described.</li>
                 <li><b>Cardinality Constraint: </b>A cardinality constraint, on the other hand, regulates the quantity of values that a property can have in relation to instances of a given class. It specifies how many instances or values of the property are required or allowed for individuals belonging to that class.</li>
             </ul>
+            <p *ngIf="dispositivo != 'computer'" class="texto">
+                <b>Value Constraint: </b>This type of restriction sets boundaries or limitations on the possible values that a property can have when associated with instances of a particular class. Essentially, it defines what kind of values are allowed for that property within the context of the class being described. <br><br>
+                <b>Cardinality Constraint: </b>A cardinality constraint, on the other hand, regulates the quantity of values that a property can have in relation to instances of a given class. It specifies how many instances or values of the property are required or allowed for individuals belonging to that class.
+            </p>
             <p class="texto">
                 These property restrictions are versatile and can be applied to both datatype properties (properties with literal values such as strings or numbers) and object properties (properties linking individuals to other individuals). By using property restrictions, ontology designers can precisely define the characteristics and relationships of classes within the ontology, facilitating more accurate modeling of domain concepts.
             </p>
@@ -153,14 +165,59 @@
             <p class="texto">
                 A cardinality constraint restricts the number of values that a property can take for individuals belonging to a specific class. OWL provides three types of cardinality constraints: owl:maxCardinality, owl:minCardinality, and owl:cardinality.
             </p>
-            <div style="text-align: center;">
-                <img src="../../assets/img/symmetric_op_1.svg" class="img-small" />
+            <p class="texto">
+                <b>owl:maxCardinality :</b>
+            </p>
+            <p class="texto">
+                The owl:maxCardinality constraint is a predefined OWL property that associates a restriction class with a numerical value from the nonNegativeInteger datatype in the XML Schema. When applied, this constraint defines a class comprising individuals that possess, at most, N unique values for the specified property. Here, N represents the value set by the cardinality constraint.
+            </p>
+            <div class="contenedor-imagenes">
+                <figure>
+                    <img src="../../assets/img/max_cardinality_1.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Object Property</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="../../assets/img/max_cardinality_2.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Datatype Property</em></figcaption>
+                </figure>
             </div>
             <p class="texto">
-                Consider a property hasSibling, which indicates that two individuals share the same parent. If John has a sibling named Mary, then Mary also has a sibling named John. This relationship is symmetric
+                <b>owl:minCardinality :</b>
+            </p>
+            <p class="texto">
+                The owl:minCardinality constraint is a predefined OWL property that associates a restriction class with a numerical value from the nonNegativeInteger datatype in the XML Schema. When applied, this constraint defines a class comprising individuals that possess, at least, N unique values for the specified property. Here, N represents the value set by the cardinality constraint.
+            </p>
+            <div class="contenedor-imagenes">
+                <figure>
+                    <img src="../../assets/img/min_cardinality_1.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Object Property</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="../../assets/img/min_cardinality_2.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Datatype Property</em></figcaption>
+                </figure>
+            </div>
+            <p class="texto">
+                <b>owl:cardinality :</b>
+            </p>
+            <p class="texto">
+                The owl:cardinality constraint is a standard OWL property that connects a restriction class to a numerical value within the range of the XML Schema datatype nonNegativeInteger. When utilized, this constraint specifies a class consisting of individuals that possess precisely N unique values for the designated property. Here, N denotes the value established by the cardinality constraint.
+            </p>
+            <div class="contenedor-imagenes">
+                <figure>
+                    <img src="../../assets/img/cardinality_1.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Object Property</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="../../assets/img/cardinality_2.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Datatype Property</em></figcaption>
+                </figure>
+            </div>
+            <p class = "texto">
+                For example, let's consider a class named "Book" with a property "hasAuthor". We want to ensure that each book has at least one author. We can use the owl:minCardinality constraint in this scenario:
             </p>
             <div style="text-align: center;">
-                <img src="../../assets/img/symmetric_op_1_ex.svg" class="img-small" />
+                <img src="../../assets/img/cardinality_ex.svg" class="img-small" />
             </div>
         </div>
         <div id="qualifiedcardinalityconstraints" class="sub-apartado">
@@ -168,16 +225,61 @@
                 <b>Qualified Cardinality Constraints</b>
             </p>
             <p class="texto">
-                Transitive properties, within the realm of ontology and descriptive logic, are properties that exhibit the transitive characteristic. This means that if x is related to y through a transitive property and y is related to z in the same manner, then it can be inferred that x is also related to z through that property.
+                The qualified cardinality constraints in OWL allow us to specify constraints on the number of individuals or data values associated with a property, conditioned on another class or data range. Let's break down the definition and examples:
             </p>
-            <div style="text-align: center;">
-                <img src="../../assets/img/transitive_op_1.svg" class="img-small" />
+            <p class="texto">
+                <b>owl:maxQualifiedCardinality :</b>
+            </p>
+            <p class="texto">
+                The owl:maxQualifiedCardinality constraint in OWL is a predefined property used to associate a restriction class with a numerical value specified within the XML Schema datatype nonNegativeInteger. When applied, this constraint defines a class comprising individuals that can have a maximum of N instances or data values associated with the property under consideration. Here, N represents the value set by the qualified cardinality constraint.
+            </p>
+            <div class="contenedor-imagenes">
+                <figure>
+                    <img src="../../assets/img/max_qualified_cardinality_1.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Object Property</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="../../assets/img/max_qualified_cardinality_2.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Datatype Property</em></figcaption>
+                </figure>
             </div>
             <p class="texto">
-                Let's explore a scenario within a geographic ontology where the property "is_subregion_of" denotes the hierarchical relationship between regions and their respective subregions. Consider three entities: Region A, Region B, and Region C. If it is established that Region B is a subregion of Region A, and Region C is a subregion of Region B, then, by the transitivity of the "is_subregion_of" property, we can infer that Region C is also a subregion of Region A.
+                <b>owl:minQualifiedCardinality :</b>
+            </p>
+            <p class="texto">
+                The owl:minQualifiedCardinality constraint in OWL serves as a predefined property that connects a restriction class with a numerical value within the XML Schema datatype nonNegativeInteger. By utilizing this constraint, a class is defined comprising individuals having a minimum of N instances or data values associated with the property in question. Here, N denotes the value specified by the qualified cardinality constraint.
+            </p>
+            <div class="contenedor-imagenes">
+                <figure>
+                    <img src="../../assets/img/min_qualified_cardinality_1.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Object Property</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="../../assets/img/min_qualified_cardinality_2.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Datatype Property</em></figcaption>
+                </figure>
+            </div>
+            <p class="texto">
+                <b>owl:qualifiedCardinality :</b>
+            </p>
+            <p class="texto">  
+                The owl:qualifiedCardinality constraint is a predefined property in OWL, connecting a restriction class with a numerical value within the range of the XML Schema datatype nonNegativeInteger. This constraint defines a class comprising individuals or data values that precisely match N instances for the property in question. Here, N represents the value specified by the qualified cardinality constraint.
+            </p>
+            <div class="contenedor-imagenes">
+                <figure>
+                    <img src="../../assets/img/qualified_cardinality_1.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Object Property</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="../../assets/img/qualified_cardinality_2.svg" class="img-mid" style="margin-bottom: 0;" />
+                    <figcaption><em>With Datatype Property</em></figcaption>
+                </figure>
+            </div>
+            <p class = "texto">
+                For example, let's consider a scenario where we have a class called "Course" representing academic courses and another class called "Student" representing students. We want to specify that each course must have exactly 30 students enrolled:
             </p>
             <div style="text-align: center;">
-                <img src="../../assets/img/transitive_op_ex.svg" class="img-small" />
+                <img src="../../assets/img/qualified_cardinality_ex.svg" class="img-small" />
             </div>
         </div>
         <div id="intersection" class="sub-apartado">
@@ -185,16 +287,16 @@
                 <b>Intersection</b>
             </p>
             <p class="texto">
-                Equivalent properties are those that have the same semantic meaning or functionality but may differ in name or identifier. In other words, if two properties are equivalent, they can be used interchangeably in an ontology without changing its meaning or behavior.
+                Intersection is an operation in OWL that allows us to define a new class by taking the common elements from two or more existing classes. It represents the set of individuals that are instances of all the classes involved in the intersection.
             </p>
             <div style="text-align: center;">
-                <img src="../../assets/img/equivalent_property_1.svg" class="img-small" />
+                <img src="../../assets/img/intersection_1.svg" class="img-mid" />
             </div>
             <p class="texto">
-                Consider two properties in an ontology: "hasParent" and "isChildOf". These properties may have different names, but they represent the same relationship between individuals. If John has a parent named Mary, this relationship can be expressed using either "hasParent" or "isChildOf" interchangeably.
+                Suppose we have two classes: "Adults" and "Male." We can define a new class called "Adult Males" by taking the intersection of these two classes, representing individuals who are both adults and male.
             </p>
             <div style="text-align: center;">
-                <img src="../../assets/img/equivalent_property_1_ex.svg" class="img-small" />
+                <img src="../../assets/img/intersection_ex.svg" class="img-small" />
             </div>
         </div>
         <div id="union" class="sub-apartado">
@@ -202,16 +304,16 @@
                 <b>Union</b>
             </p>
             <p class="texto">
-                Inverse properties are pairs of properties where if one property relates individual A to individual B, its inverse property relates individual B back to individual A. In other words, if property P1 connects individual A to individual B, then its inverse property P2 connects individual B back to individual A.
+                Union is another operation in OWL that allows us to define a new class by taking the combined elements from two or more existing classes. It represents the set of individuals that are instances of at least one of the classes involved in the union.
             </p>
             <div style="text-align: center;">
-                <img src="../../assets/img/inverse_property_1.svg" class="img-small" />
+                <img src="../../assets/img/union_1.svg" class="img-mid" />
             </div>
             <p class="texto">
-                Consider two properties in an ontology: "hasChild" and "isParentOf". The property "hasChild" indicates that individual A is the parent of individual B, while "isParentOf" indicates that individual B is the child of individual A. These properties are inverses of each other, representing the same relationship in reverse
+                Consider two classes: "Birds" and "Mammals." We can define a new class called "Animals" by taking the union of these two classes, representing all individuals that are either birds or mammals
             </p>
             <div style="text-align: center;">
-                <img src="../../assets/img/inverse_property_1_ex.svg" class="img-small" />
+                <img src="../../assets/img/union_ex.svg" class="img-small" />
             </div>
         </div>
         <div id="complement" class="sub-apartado">
@@ -219,16 +321,16 @@
                 <b>Complement</b>
             </p>
             <p class="texto">
-                Disjoint properties are properties that cannot have common instances. In other words, if two properties are declared as disjoint, it means that an individual cannot simultaneously have values for both properties.
+                Complement is an operation in OWL that allows us to define a new class by excluding the elements of an existing class from the universe of discourse. It represents the set of individuals that are not instances of a particular class.
             </p>
             <div style="text-align: center;">
-                <img src="../../assets/img/object_property_disjoint_1.svg" class="img-small" />
+                <img src="../../assets/img/complement_of_2.svg" class="img-small" />
             </div>
             <p class="texto">
-                Consider two properties in an ontology: "hasColor" and "hasShape". If these properties are declared as disjoint, it means that an individual cannot possess both a color value and a shape value at the same time. For example, an individual cannot simultaneously be both red (hasColor) and square (hasShape).
+                Suppose we have a class called "Non-Smokers" representing individuals who do not smoke. We can define a new class called "Smokers" as the complement of "Non-Smokers," representing individuals who smoke.
             </p>
             <div style="text-align: center;">
-                <img src="../../assets/img/object_property_disjoint_1_ex.svg" class="img-small" />
+                <img src="../../assets/img/complement_ex.svg" class="img-small" />
             </div>
         </div>
         <div id="enumerateddatatypes" class="sub-apartado">
@@ -236,99 +338,116 @@
                 <b>Enumerated Datatypes</b>
             </p>
             <p class="texto">
-                In ontology modeling, the "same as" relation is used to declare that two individuals are equivalent or identical in meaning. It asserts that two distinct individuals in the ontology actually refer to the same thing or entity in the real world.
+                OWL introduces an alternative way to specify a range of data values called an enumerated datatype. This type of datatype employs the owl:oneOf construct. When defining an enumerated datatype, a blank node of class owl:DataRange serves as the subject of owl:oneOf, while the object consists of a list of literals.
             </p>
-            <div style="text-align: center;">
-                <img src="../../assets/img/same_as.svg" class="img-small" />
+            <div class="contenedor-imagenes">
+                <figure>
+                    <img src="../../assets/img/enumerated_datatype_2.svg" class="img-small" style="margin-bottom: 0;" />
+                    <figcaption><em>Form 1</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="../../assets/img/enumerated_datatype_3.svg" class="img-small" style="margin-bottom: 0;" />
+                    <figcaption><em>Form 2</em></figcaption>
+                </figure>
             </div>
             <p class="texto">
-                Suppose we have two individuals named "Alex Rujas" and "Alejandro Rujas" representing the same person. By declaring that "Alejandro Rujas" is the same as "Alex Rujas", we establish that both individuals refer to the identical real-world entity.
+                Moreover, costum data values can be defined specifying the prefixes of the datatypes. By default the prefix is xsd.
             </p>
-            <div style="text-align: center;">
-                <img src="../../assets/img/same_as_ex.svg" class="img-small" />
+            <div class="contenedor-imagenes">
+                <figure>
+                    <img src="../../assets/img/enumerated_datatype.svg" class="img-small" style="margin-bottom: 0;" />
+                    <figcaption><em>Form 1</em></figcaption>
+                </figure>
+                <figure>
+                    <img src="../../assets/img/enumerated_datatype_4.svg" class="img-small" style="margin-bottom: 0;" />
+                    <figcaption><em>Form 2</em></figcaption>
+                </figure>
             </div>
         </div>
     </div>
-    <div class="ejercicios">
-        <div id="exercises1" class="apartado">
+    <div id= "exercises-adv" class="ejercicios">
+        <div class="apartado">
             <p class="encabezado-ex">
                 <b>Exercise 1</b>
             </p>
-            <p class="texto"> Design an ontology for an online shopping system that includes the following classes and properties: </p>
-            <ul class="texto">
-                <li><b>Classes:</b> Product, User, Cart</li>
-                <li><b>Properties:</b> hasProduct, hasUser</li>
-                <li><b>Constraints:</b> the hasUser property is unique</li>
+            <p class="texto">  Design an ontology for an event management system that includes classes for events, organizers, and participants. Specify that an event can have multiple organizers, but each participant can only attend one event at a time. </p>
+            <ul *ngIf="dispositivo == 'computer'" class="texto">
+                <li><b>Classes:</b> Event, Organizer, Participant</li>
+                <li><b>Properties:</b> hasOrganizer, attends</li>
             </ul>
-            <div class="ejercicio-solucion">
+            <p *ngIf="dispositivo != 'computer'" class="texto">
+                <b>Classes</b>: Event, Organizer, Participant <br><br>
+                <b>Properties</b>: hasOrganizer, attends
+            </p>
+            <div *ngIf="dispositivo == 'computer'" class="ejercicio-solucion">
                 <img #diagrama (click)="editarDiagrama()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAABHCAYAAACtfGOtAAAAAXNSR0IArs4c6QAAB4x0RVh0bXhmaWxlACUzQ214ZmlsZSUyMGhvc3QlM0QlMjJhcHAuZGlhZ3JhbXMubmV0JTIyJTIwbW9kaWZpZWQlM0QlMjIyMDI0LTA0LTE2VDE4JTNBNDIlM0E0Ni4xMjBaJTIyJTIwYWdlbnQlM0QlMjJNb3ppbGxhJTJGNS4wJTIwKFdpbmRvd3MlMjBOVCUyMDEwLjAlM0IlMjBXaW42NCUzQiUyMHg2NCklMjBBcHBsZVdlYktpdCUyRjUzNy4zNiUyMChLSFRNTCUyQyUyMGxpa2UlMjBHZWNrbyklMjBDaHJvbWUlMkYxMjMuMC4wLjAlMjBTYWZhcmklMkY1MzcuMzYlMjIlMjBldGFnJTNEJTIyNnB1VE0tWmNxc00xdDQ1S2RHeGolMjIlMjB2ZXJzaW9uJTNEJTIyMjQuMi41JTIyJTIwdHlwZSUzRCUyMmdvb2dsZSUyMiUzRSUwQSUyMCUyMCUzQ2RpYWdyYW0lMjBuYW1lJTNEJTIyUCVDMyVBMWdpbmEtMSUyMiUyMGlkJTNEJTIyaEZwTnREak8tSWhTRFdCT2J1YVolMjIlM0UlMEElMjAlMjAlMjAlMjAlM0NteEdyYXBoTW9kZWwlMjBkeCUzRCUyMjE2NzQlMjIlMjBkeSUzRCUyMjczOCUyMiUyMGdyaWQlM0QlMjIxJTIyJTIwZ3JpZFNpemUlM0QlMjIxMCUyMiUyMGd1aWRlcyUzRCUyMjElMjIlMjB0b29sdGlwcyUzRCUyMjElMjIlMjBjb25uZWN0JTNEJTIyMSUyMiUyMGFycm93cyUzRCUyMjElMjIlMjBmb2xkJTNEJTIyMSUyMiUyMHBhZ2UlM0QlMjIxJTIyJTIwcGFnZVNjYWxlJTNEJTIyMSUyMiUyMHBhZ2VXaWR0aCUzRCUyMjgyNyUyMiUyMHBhZ2VIZWlnaHQlM0QlMjIxMTY5JTIyJTIwbWF0aCUzRCUyMjAlMjIlMjBzaGFkb3clM0QlMjIwJTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDcm9vdCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMCUyMiUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMSUyMiUyMHBhcmVudCUzRCUyMjAlMjIlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteENlbGwlMjBpZCUzRCUyMllDemgtS1VWd0ozVi1leFh3R2tULTElMjIlMjB2YWx1ZSUzRCUyMlBVTFNFJTIwUEFSQSUyMENPTUVOWkFSJTIyJTIwc3R5bGUlM0QlMjJyb3VuZGVkJTNEMCUzQndoaXRlU3BhY2UlM0R3cmFwJTNCaHRtbCUzRDElM0JzbmFwVG9Qb2ludCUzRDElM0Jwb2ludHMlM0QlNUIlNUIwLjElMkMwJTVEJTJDJTVCMC4yJTJDMCU1RCUyQyU1QjAuMyUyQzAlNUQlMkMlNUIwLjQlMkMwJTVEJTJDJTVCMC41JTJDMCU1RCUyQyU1QjAuNiUyQzAlNUQlMkMlNUIwLjclMkMwJTVEJTJDJTVCMC44JTJDMCU1RCUyQyU1QjAuOSUyQzAlNUQlMkMlNUIwJTJDMC4xJTVEJTJDJTVCMCUyQzAuMyU1RCUyQyU1QjAlMkMwLjUlNUQlMkMlNUIwJTJDMC43JTVEJTJDJTVCMCUyQzAuOSU1RCUyQyU1QjAuMSUyQzElNUQlMkMlNUIwLjIlMkMxJTVEJTJDJTVCMC4zJTJDMSU1RCUyQyU1QjAuNCUyQzElNUQlMkMlNUIwLjUlMkMxJTVEJTJDJTVCMC42JTJDMSU1RCUyQyU1QjAuNyUyQzElNUQlMkMlNUIwLjglMkMxJTVEJTJDJTVCMC45JTJDMSU1RCUyQyU1QjElMkMwLjElNUQlMkMlNUIxJTJDMC4zJTVEJTJDJTVCMSUyQzAuNSU1RCUyQyU1QjElMkMwLjclNUQlMkMlNUIxJTJDMC45JTVEJTVEJTNCJTIyJTIwcGFyZW50JTNEJTIyMSUyMiUyMHZlcnRleCUzRCUyMjElMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteEdlb21ldHJ5JTIweCUzRCUyMjMxOSUyMiUyMHklM0QlMjIyMzAlMjIlMjB3aWR0aCUzRCUyMjE5MCUyMiUyMGhlaWdodCUzRCUyMjYwJTIyJTIw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" class="resolver-ejercicio"/>
-                <div class="card" [ngClass]="{ 'flipped': isFlipped[0].valor}" (click)="toggleFlip(0)">
+                <div class="card" [ngClass]="{ 'flipped': isFlipped[0].valor}" (click)="toggleFlip(0)" style="width: 500px; height: 300px;">
                     <div class="front"><b>Show Solution</b></div>
                     <div class="back">
-                        <img  src = "../../assets/img/exercise1-med.svg" />
+                        <img  src = "../../assets/img/exercise1-adv.svg" />
                     </div>
                 </div>
             </div>
+            <p-messages *ngIf="dispositivo != 'computer'" [(value)]="message" [closable]="false" ></p-messages>
             <p class="encabezado-ex">
                 <b>Exercise 2</b>
             </p>
-            <p class="texto">Design an ontology to represent a social media platform, focusing on modeling the relationships between users, posts, and comments. The ontology should capture the structure and interactions typical of social media platforms, allowing for the representation of users who create posts and comments on those posts</p>
-            <ul class="texto">
-                <li><b>Classes:</b> User, Post, Comment</li>
-                <li><b>Properties:</b> publishes, comments, responds, belongs</li>
-                <li><b>Constraints:</b> symmetric property is applied to the relationship between posts and comments, transitive property is utilized to represent the hierarchical structure of comments, functional property is applied to the relationship between comment and user, ensuring that each comment belongs to only one user.</li>
+            <p class="texto">Develop an ontology to model financial investments, including assets, portfolios, market data, and investment strategies.</p>
+            <ul *ngIf="dispositivo == 'computer'" class="texto">
+                <li><b>Classes:</b> Asset, Portfolio, MarketData, InvestmentStrategy, ComplementStrategy</li>
+                <li><b>Properties:</b> 
+                    <ul class="texto">
+                        <li><b>belongsToPortfolio:</b> Object property linking assets to portfolios.</li>
+                        <li><b>hasMarketData:</b> Object property linking assets to relevant market data.</li>
+                        <li><b>implementsStrategy:</b> Object property linking portfolios to investment or complement strategies</li>
+                    </ul>
+                </li>
+                <li><b>Constraints:</b>
+                    <ul class="texto">
+                        <li><b>Enumeration:</b> Define subclasses for asset types (Stock, Bond, Commodity) and market sectors (TechnologySector, HealthcareSector).</li>
+                        <li><b>Complementary:</b> Define InvestmentStrategy as complementary to ComplementaryStrategy, to allow representing investment strategies that are not investment</li>
+                    </ul>
+                </li>
             </ul>
-            <div class="ejercicio-solucion">
+            <p *ngIf="dispositivo != 'computer'" class="texto">
+                <b>Classes: </b> Asset, Portfolio, MarketData, InvestmentStrategy, ComplementStrategy<br><br>
+                <b>Properties:</b> <br>
+                <b>belongsToPortfolio:</b> Object property linking assets to portfolios.<br>
+                <b>hasMarketData:</b> Object property linking assets to relevant market data.<br>
+                <b>implementsStrategy:</b> Object property linking portfolios to investment or complement strategies.<br><br>
+                <b>Constraints:</b> <br>
+                <b>Enumeration:</b> Define subclasses for asset types (Stock, Bond, Commodity) and market sectors (TechnologySector, HealthcareSector). <br>
+                <b>Complementary:</b> Define InvestmentStrategy as complementary to ComplementaryStrategy, to allow representing investment strategies that are not investment.
+            </p>
+            <div *ngIf="dispositivo == 'computer'" class="ejercicio-solucion">
                 <img #diagrama (click)="editarDiagrama()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAABHCAYAAACtfGOtAAAAAXNSR0IArs4c6QAAB4x0RVh0bXhmaWxlACUzQ214ZmlsZSUyMGhvc3QlM0QlMjJhcHAuZGlhZ3JhbXMubmV0JTIyJTIwbW9kaWZpZWQlM0QlMjIyMDI0LTA0LTE2VDE4JTNBNDIlM0E0Ni4xMjBaJTIyJTIwYWdlbnQlM0QlMjJNb3ppbGxhJTJGNS4wJTIwKFdpbmRvd3MlMjBOVCUyMDEwLjAlM0IlMjBXaW42NCUzQiUyMHg2NCklMjBBcHBsZVdlYktpdCUyRjUzNy4zNiUyMChLSFRNTCUyQyUyMGxpa2UlMjBHZWNrbyklMjBDaHJvbWUlMkYxMjMuMC4wLjAlMjBTYWZhcmklMkY1MzcuMzYlMjIlMjBldGFnJTNEJTIyNnB1VE0tWmNxc00xdDQ1S2RHeGolMjIlMjB2ZXJzaW9uJTNEJTIyMjQuMi41JTIyJTIwdHlwZSUzRCUyMmdvb2dsZSUyMiUzRSUwQSUyMCUyMCUzQ2RpYWdyYW0lMjBuYW1lJTNEJTIyUCVDMyVBMWdpbmEtMSUyMiUyMGlkJTNEJTIyaEZwTnREak8tSWhTRFdCT2J1YVolMjIlM0UlMEElMjAlMjAlMjAlMjAlM0NteEdyYXBoTW9kZWwlMjBkeCUzRCUyMjE2NzQlMjIlMjBkeSUzRCUyMjczOCUyMiUyMGdyaWQlM0QlMjIxJTIyJTIwZ3JpZFNpemUlM0QlMjIxMCUyMiUyMGd1aWRlcyUzRCUyMjElMjIlMjB0b29sdGlwcyUzRCUyMjElMjIlMjBjb25uZWN0JTNEJTIyMSUyMiUyMGFycm93cyUzRCUyMjElMjIlMjBmb2xkJTNEJTIyMSUyMiUyMHBhZ2UlM0QlMjIxJTIyJTIwcGFnZVNjYWxlJTNEJTIyMSUyMiUyMHBhZ2VXaWR0aCUzRCUyMjgyNyUyMiUyMHBhZ2VIZWlnaHQlM0QlMjIxMTY5JTIyJTIwbWF0aCUzRCUyMjAlMjIlMjBzaGFkb3clM0QlMjIwJTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDcm9vdCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMCUyMiUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMSUyMiUyMHBhcmVudCUzRCUyMjAlMjIlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteENlbGwlMjBpZCUzRCUyMllDemgtS1VWd0ozVi1leFh3R2tULTElMjIlMjB2YWx1ZSUzRCUyMlBVTFNFJTIwUEFSQSUyMENPTUVOWkFSJTIyJTIwc3R5bGUlM0QlMjJyb3VuZGVkJTNEMCUzQndoaXRlU3BhY2UlM0R3cmFwJTNCaHRtbCUzRDElM0JzbmFwVG9Qb2ludCUzRDElM0Jwb2ludHMlM0QlNUIlNUIwLjElMkMwJTVEJTJDJTVCMC4yJTJDMCU1RCUyQyU1QjAuMyUyQzAlNUQlMkMlNUIwLjQlMkMwJTVEJTJDJTVCMC41JTJDMCU1RCUyQyU1QjAuNiUyQzAlNUQlMkMlNUIwLjclMkMwJTVEJTJDJTVCMC44JTJDMCU1RCUyQyU1QjAuOSUyQzAlNUQlMkMlNUIwJTJDMC4xJTVEJTJDJTVCMCUyQzAuMyU1RCUyQyU1QjAlMkMwLjUlNUQlMkMlNUIwJTJDMC43JTVEJTJDJTVCMCUyQzAuOSU1RCUyQyU1QjAuMSUyQzElNUQlMkMlNUIwLjIlMkMxJTVEJTJDJTVCMC4zJTJDMSU1RCUyQyU1QjAuNCUyQzElNUQlMkMlNUIwLjUlMkMxJTVEJTJDJTVCMC42JTJDMSU1RCUyQyU1QjAuNyUyQzElNUQlMkMlNUIwLjglMkMxJTVEJTJDJTVCMC45JTJDMSU1RCUyQyU1QjElMkMwLjElNUQlMkMlNUIxJTJDMC4zJTVEJTJDJTVCMSUyQzAuNSU1RCUyQyU1QjElMkMwLjclNUQlMkMlNUIxJTJDMC45JTVEJTVEJTNCJTIyJTIwcGFyZW50JTNEJTIyMSUyMiUyMHZlcnRleCUzRCUyMjElMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteEdlb21ldHJ5JTIweCUzRCUyMjMxOSUyMiUyMHklM0QlMjIyMzAlMjIlMjB3aWR0aCUzRCUyMjE5MCUyMiUyMGhlaWdodCUzRCUyMjYwJTIyJTIw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" class="resolver-ejercicio"/>
-                <div class="card" [ngClass]="{ 'flipped': isFlipped[1].valor}" (click)="toggleFlip(1)">
+                <div class="card" [ngClass]="{ 'flipped': isFlipped[1].valor}" (click)="toggleFlip(1)" style="width: 800px; height: 500px;">
                     <div class="front"><b>Show Solution</b></div>
                     <div class="back">
-                        <img  src = "../../assets/img/exercise2-med.svg" />
+                        <img  src = "../../assets/img/exercise2-adv.svg" />
                     </div>
                 </div>
             </div>
+            <p-messages *ngIf="dispositivo != 'computer'" [(value)]="message" [closable]="false" ></p-messages>
             <p class="encabezado-ex">
                 <b>Exercise 3</b>
             </p>
             <p class="texto">In this exercise, we aim to design an ontology that represents cooking recipes, including various aspects such as ingredients, preparation steps, and dish categories. The ontology will serve as a structured knowledge representation of the culinary domain, enabling efficient organization, retrieval, and analysis of cooking-related information</p>
-            <ul class="texto">
+            <ul *ngIf="dispositivo == 'computer'" class="texto">
                 <li><b>Classes:</b> Recipe, Ingredient, PreparationStep, Category</li>
                 <li><b>Properties:</b> usesIngredients, hasStep, belongsTo, belongsCategory</li>
                 <li><b>Constraints:</b> functional properties ensure that each ingredient is associated with a single quantity and unit of measurement within a recipe, the ontology may define disjointness between incompatible ingredient types (e.g., "meat" and "vegetarian") to enforce dietary restrictions or recipe preferences</li>
             </ul>
-            <div class="ejercicio-solucion">
+            <div *ngIf="dispositivo == 'computer'" class="ejercicio-solucion">
                 <img #diagrama (click)="editarDiagrama()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAABHCAYAAACtfGOtAAAAAXNSR0IArs4c6QAAB4x0RVh0bXhmaWxlACUzQ214ZmlsZSUyMGhvc3QlM0QlMjJhcHAuZGlhZ3JhbXMubmV0JTIyJTIwbW9kaWZpZWQlM0QlMjIyMDI0LTA0LTE2VDE4JTNBNDIlM0E0Ni4xMjBaJTIyJTIwYWdlbnQlM0QlMjJNb3ppbGxhJTJGNS4wJTIwKFdpbmRvd3MlMjBOVCUyMDEwLjAlM0IlMjBXaW42NCUzQiUyMHg2NCklMjBBcHBsZVdlYktpdCUyRjUzNy4zNiUyMChLSFRNTCUyQyUyMGxpa2UlMjBHZWNrbyklMjBDaHJvbWUlMkYxMjMuMC4wLjAlMjBTYWZhcmklMkY1MzcuMzYlMjIlMjBldGFnJTNEJTIyNnB1VE0tWmNxc00xdDQ1S2RHeGolMjIlMjB2ZXJzaW9uJTNEJTIyMjQuMi41JTIyJTIwdHlwZSUzRCUyMmdvb2dsZSUyMiUzRSUwQSUyMCUyMCUzQ2RpYWdyYW0lMjBuYW1lJTNEJTIyUCVDMyVBMWdpbmEtMSUyMiUyMGlkJTNEJTIyaEZwTnREak8tSWhTRFdCT2J1YVolMjIlM0UlMEElMjAlMjAlMjAlMjAlM0NteEdyYXBoTW9kZWwlMjBkeCUzRCUyMjE2NzQlMjIlMjBkeSUzRCUyMjczOCUyMiUyMGdyaWQlM0QlMjIxJTIyJTIwZ3JpZFNpemUlM0QlMjIxMCUyMiUyMGd1aWRlcyUzRCUyMjElMjIlMjB0b29sdGlwcyUzRCUyMjElMjIlMjBjb25uZWN0JTNEJTIyMSUyMiUyMGFycm93cyUzRCUyMjElMjIlMjBmb2xkJTNEJTIyMSUyMiUyMHBhZ2UlM0QlMjIxJTIyJTIwcGFnZVNjYWxlJTNEJTIyMSUyMiUyMHBhZ2VXaWR0aCUzRCUyMjgyNyUyMiUyMHBhZ2VIZWlnaHQlM0QlMjIxMTY5JTIyJTIwbWF0aCUzRCUyMjAlMjIlMjBzaGFkb3clM0QlMjIwJTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDcm9vdCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMCUyMiUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMSUyMiUyMHBhcmVudCUzRCUyMjAlMjIlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteENlbGwlMjBpZCUzRCUyMllDemgtS1VWd0ozVi1leFh3R2tULTElMjIlMjB2YWx1ZSUzRCUyMlBVTFNFJTIwUEFSQSUyMENPTUVOWkFSJTIyJTIwc3R5bGUlM0QlMjJyb3VuZGVkJTNEMCUzQndoaXRlU3BhY2UlM0R3cmFwJTNCaHRtbCUzRDElM0JzbmFwVG9Qb2ludCUzRDElM0Jwb2ludHMlM0QlNUIlNUIwLjElMkMwJTVEJTJDJTVCMC4yJTJDMCU1RCUyQyU1QjAuMyUyQzAlNUQlMkMlNUIwLjQlMkMwJTVEJTJDJTVCMC41JTJDMCU1RCUyQyU1QjAuNiUyQzAlNUQlMkMlNUIwLjclMkMwJTVEJTJDJTVCMC44JTJDMCU1RCUyQyU1QjAuOSUyQzAlNUQlMkMlNUIwJTJDMC4xJTVEJTJDJTVCMCUyQzAuMyU1RCUyQyU1QjAlMkMwLjUlNUQlMkMlNUIwJTJDMC43JTVEJTJDJTVCMCUyQzAuOSU1RCUyQyU1QjAuMSUyQzElNUQlMkMlNUIwLjIlMkMxJTVEJTJDJTVCMC4zJTJDMSU1RCUyQyU1QjAuNCUyQzElNUQlMkMlNUIwLjUlMkMxJTVEJTJDJTVCMC42JTJDMSU1RCUyQyU1QjAuNyUyQzElNUQlMkMlNUIwLjglMkMxJTVEJTJDJTVCMC45JTJDMSU1RCUyQyU1QjElMkMwLjElNUQlMkMlNUIxJTJDMC4zJTVEJTJDJTVCMSUyQzAuNSU1RCUyQyU1QjElMkMwLjclNUQlMkMlNUIxJTJDMC45JTVEJTVEJTNCJTIyJTIwcGFyZW50JTNEJTIyMSUyMiUyMHZlcnRleCUzRCUyMjElMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteEdlb21ldHJ5JTIweCUzRCUyMjMxOSUyMiUyMHklM0QlMjIyMzAlMjIlMjB3aWR0aCUzRCUyMjE5MCUyMiUyMGhlaWdodCUzRCUyMjYwJTIyJTIw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" class="resolver-ejercicio"/>
-                <div class="card" [ngClass]="{ 'flipped': isFlipped[2].valor}" (click)="toggleFlip(2)">
+                <div class="card" [ngClass]="{ 'flipped': isFlipped[2].valor}" (click)="toggleFlip(2)" style="width: 600px; height: 400px;">
                     <div class="front"><b>Show Solution</b></div>
                     <div class="back">
                         <img  src = "../../assets/img/exercise3.svg" />
                     </div>
                 </div>
             </div>
-            <p class="encabezado-ex">
-                <b>Exercise 4</b>
-            </p>
-            <p class="texto">In this exercise, we will develop an ontology for travel destinations, aiming to represent various aspects such as locations, attractions, activities, and visitor preferences. The ontology will serve as a structured knowledge base for travelers, tour operators, and travel enthusiasts to explore, plan, and share their travel experiences effectively</p>
-            <ul class="texto">
-                <li><b>Classes:</b> Location, Attraction, Activity, VisitorPreferencey</li>
-                <li><b>Properties:</b> hasName, hasDescription, hasCoordinates, hasAccessibilityInformation, hasHistoricalSignificance, hasType</li>
-                <li><b>Constraints:</b> 
-                    <ul>
-                        <li>Functional properties ensure that each location, attraction, activity, and visitor preference has a unique name, description, and set of coordinates.</li>
-                        <li>The ontology may define disjointness between incompatible attraction types (e.g., "museum" and "natural site") to categorize and differentiate between different types of attractions.</li>
-                        <li>Visitor preferences may include functional properties to ensure that each preference (e.g., budget, travel purpose, interests) is associated with a single value or range of values.</li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="ejercicio-solucion">
-                <img #diagrama (click)="editarDiagrama()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAABHCAYAAACtfGOtAAAAAXNSR0IArs4c6QAAB4x0RVh0bXhmaWxlACUzQ214ZmlsZSUyMGhvc3QlM0QlMjJhcHAuZGlhZ3JhbXMubmV0JTIyJTIwbW9kaWZpZWQlM0QlMjIyMDI0LTA0LTE2VDE4JTNBNDIlM0E0Ni4xMjBaJTIyJTIwYWdlbnQlM0QlMjJNb3ppbGxhJTJGNS4wJTIwKFdpbmRvd3MlMjBOVCUyMDEwLjAlM0IlMjBXaW42NCUzQiUyMHg2NCklMjBBcHBsZVdlYktpdCUyRjUzNy4zNiUyMChLSFRNTCUyQyUyMGxpa2UlMjBHZWNrbyklMjBDaHJvbWUlMkYxMjMuMC4wLjAlMjBTYWZhcmklMkY1MzcuMzYlMjIlMjBldGFnJTNEJTIyNnB1VE0tWmNxc00xdDQ1S2RHeGolMjIlMjB2ZXJzaW9uJTNEJTIyMjQuMi41JTIyJTIwdHlwZSUzRCUyMmdvb2dsZSUyMiUzRSUwQSUyMCUyMCUzQ2RpYWdyYW0lMjBuYW1lJTNEJTIyUCVDMyVBMWdpbmEtMSUyMiUyMGlkJTNEJTIyaEZwTnREak8tSWhTRFdCT2J1YVolMjIlM0UlMEElMjAlMjAlMjAlMjAlM0NteEdyYXBoTW9kZWwlMjBkeCUzRCUyMjE2NzQlMjIlMjBkeSUzRCUyMjczOCUyMiUyMGdyaWQlM0QlMjIxJTIyJTIwZ3JpZFNpemUlM0QlMjIxMCUyMiUyMGd1aWRlcyUzRCUyMjElMjIlMjB0b29sdGlwcyUzRCUyMjElMjIlMjBjb25uZWN0JTNEJTIyMSUyMiUyMGFycm93cyUzRCUyMjElMjIlMjBmb2xkJTNEJTIyMSUyMiUyMHBhZ2UlM0QlMjIxJTIyJTIwcGFnZVNjYWxlJTNEJTIyMSUyMiUyMHBhZ2VXaWR0aCUzRCUyMjgyNyUyMiUyMHBhZ2VIZWlnaHQlM0QlMjIxMTY5JTIyJTIwbWF0aCUzRCUyMjAlMjIlMjBzaGFkb3clM0QlMjIwJTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTNDcm9vdCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMCUyMiUyMCUyRiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ214Q2VsbCUyMGlkJTNEJTIyMSUyMiUyMHBhcmVudCUzRCUyMjAlMjIlMjAlMkYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteENlbGwlMjBpZCUzRCUyMllDemgtS1VWd0ozVi1leFh3R2tULTElMjIlMjB2YWx1ZSUzRCUyMlBVTFNFJTIwUEFSQSUyMENPTUVOWkFSJTIyJTIwc3R5bGUlM0QlMjJyb3VuZGVkJTNEMCUzQndoaXRlU3BhY2UlM0R3cmFwJTNCaHRtbCUzRDElM0JzbmFwVG9Qb2ludCUzRDElM0Jwb2ludHMlM0QlNUIlNUIwLjElMkMwJTVEJTJDJTVCMC4yJTJDMCU1RCUyQyU1QjAuMyUyQzAlNUQlMkMlNUIwLjQlMkMwJTVEJTJDJTVCMC41JTJDMCU1RCUyQyU1QjAuNiUyQzAlNUQlMkMlNUIwLjclMkMwJTVEJTJDJTVCMC44JTJDMCU1RCUyQyU1QjAuOSUyQzAlNUQlMkMlNUIwJTJDMC4xJTVEJTJDJTVCMCUyQzAuMyU1RCUyQyU1QjAlMkMwLjUlNUQlMkMlNUIwJTJDMC43JTVEJTJDJTVCMCUyQzAuOSU1RCUyQyU1QjAuMSUyQzElNUQlMkMlNUIwLjIlMkMxJTVEJTJDJTVCMC4zJTJDMSU1RCUyQyU1QjAuNCUyQzElNUQlMkMlNUIwLjUlMkMxJTVEJTJDJTVCMC42JTJDMSU1RCUyQyU1QjAuNyUyQzElNUQlMkMlNUIwLjglMkMxJTVEJTJDJTVCMC45JTJDMSU1RCUyQyU1QjElMkMwLjElNUQlMkMlNUIxJTJDMC4zJTVEJTJDJTVCMSUyQzAuNSU1RCUyQyU1QjElMkMwLjclNUQlMkMlNUIxJTJDMC45JTVEJTVEJTNCJTIyJTIwcGFyZW50JTNEJTIyMSUyMiUyMHZlcnRleCUzRCUyMjElMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NteEdlb21ldHJ5JTIweCUzRCUyMjMxOSUyMiUyMHklM0QlMjIyMzAlMjIlMjB3aWR0aCUzRCUyMjE5MCUyMiUyMGhlaWdodCUzRCUyMjYwJTIyJTIw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" class="resolver-ejercicio"/>
-                <div class="card" [ngClass]="{ 'flipped': isFlipped[3].valor}" (click)="toggleFlip(3)">
-                    <div class="front"><b>Show Solution</b></div>
-                    <div class="back">
-                        <img  src = "../../assets/img/exercise4.svg" />
-                    </div>
-                </div>
-            </div>
+            <p-messages *ngIf="dispositivo != 'computer'" [(value)]="message" [closable]="false" ></p-messages>
         </div>
     </div>
 </div>

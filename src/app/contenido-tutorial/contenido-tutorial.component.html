@@ -72,6 +72,7 @@
             For advanced users seeking mastery, the advanced level delves into intricate topics such as class descriptions, enumerated datatypes, and advanced property constraints. These lessons offer a deep dive into the intricacies of Chowlk notation, equipping you with the skills to tackle complex ontology modeling projects with confidence.
         </p>
     </div>
-    <app-selector-dificultad  [dispositivo]="dispositivo" (difficultySelected)="onDifficultySelected($event)"></app-selector-dificultad>
+    <p-messages *ngIf="!diff" class="p-message" [(value)]="message" [closable]="false" ></p-messages>
+    <app-selector-dificultad  [dispositivo]="dispositivo"></app-selector-dificultad>
     <router-outlet></router-outlet>
 </div>

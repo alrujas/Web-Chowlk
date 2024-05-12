@@ -4,6 +4,7 @@ import { ResponsiveService } from '../../../services/responsive.service';
 import { Subscription } from 'rxjs';
 import { DISPOSITIVOS } from '../../../constantes/constantes-responsive';
 import { ScrollToService } from '../../../services/scroll-to.service';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-basico',
@@ -13,6 +14,8 @@ import { ScrollToService } from '../../../services/scroll-to.service';
 export class BasicoComponent {
 
   dispositivo: string = DISPOSITIVOS.COMPUTER;
+
+  message: Message[];
 
   responsiveChanges?: Subscription;
 
@@ -39,6 +42,9 @@ export class BasicoComponent {
       this.scrollToSelector(apartado);
       this.changeDetector.detectChanges;
     });
+    this.message = [
+      { severity: 'warn', detail: 'To perform the tutorial exercises, please access from a computer' }
+    ]
   }
 
   editarDiagrama(){

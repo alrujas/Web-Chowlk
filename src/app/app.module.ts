@@ -13,6 +13,7 @@ import { BasicoComponent } from './contenido-tutorial/dificultades/basico/basico
 import { MedioComponent } from './contenido-tutorial/dificultades/medio/medio.component';
 import { AdvancedComponent } from './contenido-tutorial/dificultades/advanced/advanced.component';
 import { SelectorDificultadComponent } from './contenido-tutorial/dificultades/selector-dificultad/selector-dificultad.component';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SelectorDificultadComponent } from './contenido-tutorial/dificultades/s
     BrowserModule,
     AppRoutingModule,
     ScrollingModule,
-    MatIconModule
+    MatIconModule,
+    MessagesModule
   ],
   providers: [
     provideClientHydration(),

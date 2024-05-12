@@ -4,6 +4,7 @@ import { ResponsiveService } from '../../../services/responsive.service';
 import { DISPOSITIVOS } from '../../../constantes/constantes-responsive';
 import { Subscription } from 'rxjs';
 import { ScrollToService } from '../../../services/scroll-to.service';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-advanced',
@@ -12,6 +13,8 @@ import { ScrollToService } from '../../../services/scroll-to.service';
 })
 export class AdvancedComponent {
   @ViewChild('diagrama', { static: true }) diagramaRef: ElementRef;
+
+  message: Message[];
 
   isFlipped = [ 
     { id : 0, valor: false },
@@ -39,6 +42,9 @@ export class AdvancedComponent {
       this.scrollToSelector(apartado);
       this.changeDetector.detectChanges;
     });
+    this.message = [
+      { severity: 'warn', detail: 'To perform the tutorial exercises, please access from a computer' }
+    ]
   }
 
   editarDiagrama(){

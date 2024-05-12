@@ -12,7 +12,7 @@ import { OcultarTablaService } from './services/ocultar-tabla.service';
 })
 export class AppComponent implements OnInit{
   title = 'Tutoriales';
-  ocultar = false;
+  ocultar : boolean = false;
 
   ocultarChanges?: Subscription;
   //responsive
@@ -39,16 +39,16 @@ export class AppComponent implements OnInit{
         this.responsiveService.setDispositivoActual(DISPOSITIVOS.MOBILE);
       } else if (bp[Breakpoints.TabletPortrait]){
         this.responsiveService.setDispositivoActual(DISPOSITIVOS.TABLET);
-        this.ocultar=false;
+        this.ocultar=true;
       } else if (bp[Breakpoints.HandsetLandscape]){
         this.responsiveService.setDispositivoActual(DISPOSITIVOS.MOBILE_LANDSCAPE);
-        this.ocultar=false;
+        this.ocultar=true;
       }else if(bp[Breakpoints.TabletLandscape]){
         this.responsiveService.setDispositivoActual(DISPOSITIVOS.TABLET_LANDSCAPE);
-        this.ocultar=false;
+        this.ocultar=true;
       } else {
         this.responsiveService.setDispositivoActual(DISPOSITIVOS.COMPUTER);
-        this.ocultar=false;
+        this.ocultar=true;
       }
     });
     this.responsiveChanges = this.responsiveService.getDispositivoActual()

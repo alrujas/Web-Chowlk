@@ -1,7 +1,7 @@
 <div class="contenido" [ngClass]="dispositivo">
     <div class="inicio-indicador">
         <img src = "../../../assets/img/chowlk.png" alt="logo-chowlk" class = "logo-chowlk">
-        <div class="indicador">
+        <div class="indicador" *ngIf="diff">
             <div [ngClass]="diff" class="opcion">{{diff}}</div>
         </div>
     </div>
@@ -15,5 +15,5 @@
             <img src = "../../../assets/img/github.png" alt="logo-github" class = "logo-github">
         </a>
     </div>
-    <mat-icon *ngIf="extendido" class="menu" (click)="expandirTabla()">menu</mat-icon>
+    <mat-icon *ngIf="extendido && dispositivo=='mobile'" class="menu" (click)="expandirTabla()">menu</mat-icon>
 </div>

@@ -7,7 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class OcultarTablaService {
 
   public ocultarTablaChange: Subject<boolean> = new BehaviorSubject<boolean>(
-    false
+    true
   );
 
   public getValorOcultar(){

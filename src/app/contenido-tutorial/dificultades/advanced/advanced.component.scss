@@ -70,12 +70,8 @@
                     margin-top:1rem;
                     margin-bottom:1rem;
                     padding: 1rem;
-                    border: 2px solid #7fffd4;
-                    border-radius: 8px;
                 }
                 .card {
-                    width: 450px;
-                    height: 225px;
                     perspective: 1000px;
                     position: relative;
                     transform-style: preserve-3d;
@@ -135,40 +131,102 @@
         }
     }
     &.mobile, &.mobile_landscape{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 0.25rem;
-
-            .encabezado{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        .sub-apartado{
+            margin-bottom: 10px;
+            border: 1px solid #7FB3D5;
+            border-radius: 5px;
+            padding: 10px; 
+            .encabezado-sa{
                 font-family: sans-serif;
-                font-size: 1.25rem;
+                font-size: 1.15rem;
                 margin-bottom: 0.75rem;
-                text-align: center;
             }
-            .texto{
-                margin-top: 0;
+            .encabezado-2{
                 font-family: sans-serif;
-                text-align: center;
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
             }
-            .mostrar-solucion{
+        }
+        .encabezado{
+            font-family: sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        .encabezado-ex{
+            font-family: sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        .texto{
+            margin-top: 0;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .ejercicios{
+            margin-bottom: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            padding: 10px; 
+            .ejercicio-solucion{
                 display: flex;
                 flex-direction: column;
-                margin:auto;
-                justify-content: center;
-                font-family: sans-serif;
-                color: rgb(27, 107, 246);
-                margin-bottom: 1rem;
-                .mostrar{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                align-items: center;
+                .resolver-ejercicio{
+                    cursor:pointer;
+                    margin-top:1rem;
+                    margin-bottom:1rem;
                 }
-                .solucion{
-                    margin-top: 2rem;
-                    width: 60%;
+                .card {
+                    width: 100px;
+                    height: 75px;
+                    perspective: 1000px;
+                    position: relative;
+                    transform-style: preserve-3d;
+                    transition: transform 0.5s;
+                    border: 2px solid #deb887;
+                    border-radius: 8px;
+                    div {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        backface-visibility: hidden;
+                    }
                 }
             }
+        }
+        .img{
+            margin:auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            width: 140px;
+            height: 55px;
+        }
+        .img-mid{
+            margin:auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            width: 200px;
+            height: 100px;
+        }
+        .img-small{
+            margin:auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            width: 300px;
+            height: 150px;
+        }
     }
     &.tablet, &.tablet_landscape{
             display: flex;

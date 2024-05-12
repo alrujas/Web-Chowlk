@@ -12,6 +12,7 @@
             flex-direction: row;
             flex-wrap: nowrap;
             align-items: center;
+            padding-right: 1rem;
             .no-seleccionado{
                 text-decoration: none;
                 padding-right: 0.5rem;
@@ -36,8 +37,7 @@
                 -webkit-tap-highlight-color: transparent;
             }
             .logo-github{
-                width: 20px;
-                height: 20px;
+                width: 35px;
                 padding-right: 0.5rem;
                 padding-left: 0.5rem;
             }
@@ -80,12 +80,14 @@
 .contenido{
     &.mobile,
     &.mobile_landscape{
+        display: flex;
         flex-direction: column;
         .barra-navegacion{
             display: flex;
             flex-direction: row;
             align-items: center;
             .no-seleccionado{
+                text-decoration: none;
                 padding-right: 0.3rem;
                 padding-left: 0.3rem;
                 font-family: sans-serif;
@@ -97,10 +99,10 @@
             }
             .seleccionado{
                 text-decoration: none;
-                padding-right: 0.3rem;
-                padding-left: 0.3rem;
+                padding-right: 0.15rem;
+                padding-left: 0.15rem;
                 font-family: sans-serif;
-                font-size: 0.7rem;
+                font-size: 0.6rem;
                 line-height: 1.5;
                 color:black;
                 font-weight: bold;
@@ -108,16 +110,43 @@
                 -webkit-tap-highlight-color: transparent;
             }
             .logo-github{
-                width: 8px;
-                height: 8px;
+                width: 20px;
                 padding-right: 0.3rem;
                 padding-left: 0.3rem;
             }
         }
-        .logo-chowlk{
-            padding-bottom: 0.35rem;
-            width: 75px;
-            height: 35px;
+        .inicio-indicador{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 0.25rem;
+            .logo-chowlk{
+                padding-bottom: 0.35rem;
+                width: 100px;
+                height: 47px;
+            }
+            .indicador{
+                width: 100px;
+                height: 30px; 
+            }
+            .opcion{
+                margin-left: 10px;
+                padding: 5px 10px; 
+                border-radius: 20px;
+                font-family: sans-serif;
+                font-size: 16px; 
+                color: #fff;
+                text-align: center; 
+                &.Basic{
+                    background-color: #5cb85c;
+                }
+                &.Medium{
+                    background-color: #f0ad4e;
+                }
+                &.Advanced{
+                    background-color: #d9534f;
+                }
+            }
         }
         .menu{
             padding-bottom: 0.5rem;
@@ -161,10 +190,37 @@
                 padding-left: 0.5rem;
             }
         }
-        .logo-chowlk{
-            padding-bottom: 0.35rem;
-            width: 100px;
-            height: 47px;
+        .inicio-indicador{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            .logo-chowlk{
+                padding-bottom: 0.35rem;
+                width: 100px;
+                height: 47px;
+            }
+            .indicador{
+                width: 150px;
+                height: 40px; 
+            }
+            .opcion{
+                margin-left: 10px;
+                padding: 10px 20px; 
+                border-radius: 20px;
+                font-family: sans-serif;
+                font-size: 16px; 
+                color: #fff;
+                text-align: center; 
+                &.Basic{
+                    background-color: #5cb85c;
+                }
+                &.Medium{
+                    background-color: #f0ad4e;
+                }
+                &.Advanced{
+                    background-color: #d9534f;
+                }
+            }
         }
     }
 }

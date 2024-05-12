@@ -111,6 +111,13 @@
                 font-size: 0.55rem;
                 padding-bottom: 0.75rem;
             }
+            .quinario{
+                display: flex;
+                flex-wrap: nowrap;
+                padding-left: 2.25rem;
+                font-size: 0.45rem;
+                padding-bottom: 0.75rem;
+            }
         }
     }
 }
@@ -140,7 +147,7 @@
                 display: flex;
                 flex-wrap: nowrap;
                 justify-content: space-between;
-                padding-left: 1.25rem;
+                padding-left: 1.35rem;
                 font-size: 1.2rem;
                 padding-bottom: 0.75rem;
             }
@@ -168,5 +175,11 @@
     font-family: sans-serif;
 }
 .contraer{
-    padding-left: 80%;
+    display: flex;
+    justify-content: end;
+    padding-left: 100%;
+}
+a:hover{
+    transform: scale(1.15);
+    color:rgb(27, 102, 151);
 }
