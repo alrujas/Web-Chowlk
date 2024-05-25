@@ -1,10 +1,11 @@
-import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, PLATFORM_ID, Inject, ViewChild } from '@angular/core';
 import { DiagramEditorService } from '../../../services/diagram-editor.service';
 import { ResponsiveService } from '../../../services/responsive.service';
 import { DISPOSITIVOS } from '../../../constantes/constantes-responsive';
 import { Subscription } from 'rxjs';
 import { ScrollToService } from '../../../services/scroll-to.service';
 import { Message } from 'primeng/api';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-medio',
@@ -12,9 +13,13 @@ import { Message } from 'primeng/api';
   styleUrl: './medio.component.scss'
 })
 export class MedioComponent {
-  @ViewChild('diagrama', { static: true }) diagramaRef: ElementRef;
+  @ViewChild('diagrama1', { static: true }) diagramaRef1: ElementRef;
+  @ViewChild('diagrama2', { static: true }) diagramaRef2: ElementRef;
+  @ViewChild('diagrama3', { static: true }) diagramaRef3: ElementRef;
 
   message: Message[];
+
+  mostrarMensaje = false;
 
   isFlipped = [ 
     { id : 0, valor: false },
@@ -29,7 +34,7 @@ export class MedioComponent {
 
   apartadoChanges?: Subscription;
 
-  constructor(private diagram : DiagramEditorService, private responsiveService: ResponsiveService, 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private diagram : DiagramEditorService, private responsiveService: ResponsiveService, 
     private changeDetector : ChangeDetectorRef, private scrollTo : ScrollToService, private elementRef : ElementRef){}
 
   ngOnInit(){
@@ -47,9 +52,26 @@ export class MedioComponent {
     ]
   }
 
-  editarDiagrama(){
-    const diagramaElemento: HTMLImageElement | HTMLObjectElement = this.diagramaRef.nativeElement;
-    this.diagram.editElement(diagramaElemento);
+  editarDiagrama(id : number){
+    if(this.dispositivo != 'computer') this.mostrarMensaje = true;
+    else{
+      switch(id){
+        case 1:
+          const diagramaElemento1: HTMLImageElement | HTMLObjectElement = this.diagramaRef1.nativeElement;
+          this.diagram.editElement(diagramaElemento1);
+          break;
+        case 2:
+          const diagramaElemento2: HTMLImageElement | HTMLObjectElement = this.diagramaRef2.nativeElement;
+          this.diagram.editElement(diagramaElemento2);
+          console.log("entro");
+          break;
+        
+        default:
+          const diagramaElemento3: HTMLImageElement | HTMLObjectElement = this.diagramaRef3.nativeElement;
+          this.diagram.editElement(diagramaElemento3);
+          break;
+      }
+    }
   }
   
   toggleFlip(posicion: number): void {
@@ -57,10 +79,13 @@ export class MedioComponent {
   }
 
   scrollToSelector(apartado : string){
-    const specificationElement = this.elementRef.nativeElement.querySelector('#' + apartado);
-    if (specificationElement) {
-      
-      specificationElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        const specificationElement = this.elementRef.nativeElement.querySelector('#' + apartado);
+        if (specificationElement) {
+          specificationElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 0);
     }
   }
   

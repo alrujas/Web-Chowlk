@@ -1,8 +1,10 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, PLATFORM_ID, Inject , ChangeDetectorRef } from '@angular/core';
 import Aos from 'aos';
 import { ChangeDifficultyService } from '../services/change-difficulty.service';
 import { Message } from 'primeng/api';
 import { Subscription } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contenido-tutorial',
@@ -19,11 +21,15 @@ export class ContenidoTutorialComponent{
   diff = "";
   
   message: Message[];
-  constructor(private changeDiff: ChangeDifficultyService, private changeDetector: ChangeDetectorRef){}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private changeDiff: ChangeDifficultyService, 
+              private changeDetector: ChangeDetectorRef, private router: Router){}
 
   ngOnInit(){
-    Aos.init();
-    window.addEventListener('load', Aos.refresh);
+    if (isPlatformBrowser(this.platformId)) {
+      Aos.init();
+      window.addEventListener('load', Aos.refresh);
+    }
+    this.router.navigate(["Basic"]);
     this.message = [
       { severity: 'info', detail: 'Choose a difficulty to continue with the tutorial.' }
     ],

@@ -42,7 +42,8 @@ export class TablaContenidosComponent {
     this.diffTabla = dificultad;
   }
   
-  scrollToSelector(apartado : string): void {
+  scrollToSelector(apartado : string, dificultad ?: string): void {
+    if(dificultad) this.diffTabla=dificultad;
     this.changeDiff.setDificultad(this.diffTabla);
     this.scrollTo.setApartado(apartado);
   }

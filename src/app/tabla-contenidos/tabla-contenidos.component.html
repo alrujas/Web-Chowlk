@@ -3,7 +3,7 @@
     <h4 class="titulo">Table of Contents</h4>
     <div class="contenido">
         <div class="principal">
-            <a href="#introduction" class="link">
+            <a [routerLink]="['Basic']" fragment="specification" (click)="scrollToSelector('specification', 'Basic')" class="link">
                 Basic
             </a>
             <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="diffTabla == 'Basic'">keyboard_arrow_up</mat-icon>
@@ -74,7 +74,7 @@
     </div>
     <div class="contenido">
         <div class="principal">
-            <a href="#introduction" class="link">
+            <a [routerLink]="['Medium']" fragment="specification2" (click)="scrollToSelector('specification2', 'Medium')" class="link">
                 Medium
             </a>
             <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="diffTabla == 'Medium'">keyboard_arrow_up</mat-icon>
@@ -160,7 +160,7 @@
     </div>
     <div class="contenido">
         <div class="principal">
-            <a href="#introduction" class="link">
+            <a [routerLink]="['Advanced']" fragment="specification3" (click)="scrollToSelector('specification3', 'Advanced')" class="link">
                 Advanced
             </a>
             <mat-icon class="contraer-expander" (click)="contraerDificultad()" *ngIf="diffTabla == 'Advanced'">keyboard_arrow_up</mat-icon>

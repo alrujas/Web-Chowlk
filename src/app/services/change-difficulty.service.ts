@@ -8,7 +8,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class ChangeDifficultyService {
 
-  public difficultyChange: Subject<string> = new BehaviorSubject<string>('');
+  public difficultyChange: Subject<string> = new BehaviorSubject<string>('Basic');
 
   public getDificultad(){
     return this.difficultyChange.asObservable();
