@@ -1,6 +1,8 @@
 <div class="contenido" [ngClass]="dispositivo">
     <div class="inicio-indicador">
-        <img src = "../../../assets/img/chowlk.png" alt="logo-chowlk" class = "logo-chowlk">
+        <a href="https://chowlk.linkeddata.es/index.html">
+            <img src = "../../../assets/img/chowlk.png" alt="logo-chowlk" class = "logo-chowlk">
+        </a>
         <div class="indicador" *ngIf="diff">
             <div [ngClass]="diff" class="opcion">{{diff}}</div>
         </div>
