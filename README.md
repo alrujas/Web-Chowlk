@@ -1,95 +1,96 @@
-# Chowlk Tutoriales
+# Chowlk Tutorials
 
-## Descripción
+## Description
 
-Este proyecto de Angular utiliza varias librerías como PrimeNG, AOS (Animate On Scroll), y Angular Material para íconos (MatIcon). A continuación, se detallan los pasos para desplegar el proyecto y cómo realizar modificaciones en los apartados y ejercicios.
+This Angular project uses several libraries such as PrimeNG, AOS (Animate On Scroll), and Angular Material for icons (MatIcon). Below are the steps to deploy the project and how to make modifications to sections and exercises.
 
 ## Requisitos
 
-- Node.js (versión recomendada: 14.x o superior)
-- Angular CLI (versión recomendada: 12.x o superior)
+- Node.js
+- Angular CLI
 
 ## Instalación
 
-1. **Clonar el repositorio:**
+1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/tu-repositorio.git
-   cd tu-repositorio
+   cd your-repository
    ```
 
-2. **Instalar las dependencias:**
+2. **Install dependencies:**
 
    ```bash
    npm install
    ```
 
-## Despliegue
+## Deployment
 
-1. **Desarrollo:**
+1. **Development:**
 
-   Para iniciar el servidor de desarrollo, usa el siguiente comando:
+   To start the development server, use the following command:
 
    ```bash
    ng serve
    ```
 
-   Luego, abre tu navegador y navega a `http://localhost:4200`.
+   Then, open your browser and navigate to http://localhost:4200.
 
-2. **Producción:**
+2. **Production:**
 
-   Para compilar el proyecto para producción, usa el siguiente comando:
+   To build the project for production, use the following command:
 
    ```bash
    ng build --prod
    ```
 
-   Los archivos compilados se encontrarán en el directorio `dist/`.
+   The compiled files will be located in the dist/ directory.
 
-## Librerías Utilizadas
+## Libraries Used
 
-- **PrimeNG:** Para componentes de UI.
-- **AOS (Animate On Scroll):** Para animaciones al hacer scroll.
-- **Angular Material (MatIcon):** Para íconos.
+- **PrimeNG:** For UI components.
+- **AOS (Animate On Scroll):** For scroll animations.
+- **Angular Material (MatIcon):** For icons.
 
-### Instalación de Librerías
+### Library Installation
 
-Las librerías mencionadas ya están incluidas en el `package.json`. Si necesitas instalarlas nuevamente, usa los siguientes comandos:
+The mentioned libraries are already included in the package.json. If you need to install them again, use the following commands:
 
 ```bash
 npm install primeng --save
 npm install @angular/cdk --save
 npm install @angular/material --save
 npm install aos --save
-npm install primeicons --save
 ```
 
-## Modificaciones
+## Modifications
 
-### Añadir Apartados
+### Adding Sections
 
-Para añadir nuevos apartados en el proyecto debes modificar los siguientes archivos:
+To add new sections in the project, you need to modify the following files:
 
-1. **Tabla de contenidos:**
+1. **Table of Contents:**
 
-   Ve al archivo HTML de la tabla de contenidos y dentro de ella busque la dificultad donde quieres introducir el apartado. En ella introduce el apartado que quieres siguiendo el contenido que ya tiene la tabla de contenidos.
+   Go to the HTML file of the table of contents and within it, find the difficulty level where you want to add the section. Introduce the section you want following the content already present in the table of contents.
 
-2. **Contenido Tutorial:**
+2. **Tutorial Content:**
 
-   Añade el nuevo apartado en el componenente de la dificultad correspondiente dentro de la carpeta del contenido tutorial. Añade el contenido del apartado a la altura correspondiente en la que se haya introducido en la tabla de contenidos.
+   Add the new section in the component of the corresponding difficulty within the tutorial content folder. Add the section content at the corresponding height where it was introduced in the table of contents.
 
-### Modificar o añadir ejercicios
+### Modifying or Adding Exercises
 
-Para modificar un ejercicio existente, sigue estos pasos:
+To modify an existing exercise, follow these steps:
 
-1. **Archivo HTML del Componente de la Dificultad Correspondiente:**
+1. **HTML File of the Corresponding Difficulty Component:**
 
-   Localiza el archivo HTML del componente correspondiente a la dificultad del ejercicio que deseas modificar. Realiza los cambios necesarios en este archivo para modificar el enunciado del ejercicio, o si quieres introducir uno nuevo añade el nuevo ejercicio teniendo en cuenta los ids de los diagramas de los ejercicios.
+   Locate the HTML file of the component corresponding to the difficulty of the exercise you want to modify. Make the necessary changes in this file to modify the exercise statement, or if you want to introduce a new one, add the new exercise considering the IDs of the exercise diagrams.
 
-2. **Tabla contenidos:**
+2. **Table of Contents:**
 
-   Solo si añades un nuevo ejercicio tienes que ir a la tabla de contenidos y añadir el nuevo apartado a la altura correspondiente en la dificultad deseada.
+   Only if you add a new exercise, go to the table of contents and add the new section at the corresponding height in the desired difficulty level.
 
-## Contacto
+## Contact
 
-Si tienes alguna pregunta o problema, por favor, abre un issue en el repositorio o contacta con el equipo de desarrollo.
+If you have any questions or issues, please open an issue in the repository or contact the development team.
+
+Maria Poveda-Villalón (chowlk@delicias.dia.fi.upm.es)
